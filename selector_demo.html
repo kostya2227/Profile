@@ -71,6 +71,7 @@
         }
         .input:focus { border-color: #1890ff; box-shadow: 0 0 0 2px rgba(24,144,255,0.15); }
         .input-group { display: inline-flex; align-items: center; gap: 8px; }
+        .select { padding: 6px 10px; border: 1px solid #d9d9d9; border-radius: 4px; font-size: 14px; background: #fff; }
 
         /* Checkbox styling */
         input[type="checkbox"] { transform: scale(1.1); cursor: pointer; }
@@ -86,6 +87,7 @@
     <div id="actionButtons">
         <input type="file" id="xmlFile" accept=".xml" style="display: none;">
         <input type="file" id="jsonFile" accept=".json" style="display: none;">
+        <input type="file" id="jsonFiles" accept=".json" multiple style="display: none;">
         
         <!-- Initial button -->
         <button class="btn btn-primary" id="btnLoadXml" onclick="document.getElementById('xmlFile').click()">1. Загрузить profile.xml</button>
@@ -94,6 +96,11 @@
         <span id="workflowButtons" class="hidden">
             <span style="border-left: 1px solid #ccc; margin: 0 10px;"></span>
             <button class="btn" onclick="document.getElementById('jsonFile').click()">📂 Загрузить выбор клиента</button>
+            <button class="btn" onclick="document.getElementById('jsonFiles').click()">📂📂 Импорт выборов (несколько)</button>
+            <select id="mergeMode" class="select" title="Как объединять несколько файлов">
+                <option value="union">Объединить (union)</option>
+                <option value="intersection">Пересечение (intersection)</option>
+            </select>
             <button class="btn btn-primary" onclick="exportData()">💾 Сохранить выбор</button>
             <button class="btn" onclick="showReport()" title="Просмотр текущего выбора">👁️</button>
         </span>
@@ -203,6 +210,109 @@
         // Reset value to allow reloading same file
         e.target.value = '';
     });
+
+    // Handle Multiple JSON Import (merge)
+    document.getElementById('jsonFiles').addEventListener('change', function(e) {
+        const files = Array.from(e.target.files || []);
+        if (files.length === 0) return;
+        if (!appData.tables || appData.tables.length === 0) {
+            alert('Сначала загрузите profile.xml, затем импортируйте выборы.');
+            e.target.value = '';
+            return;
+        }
+
+        const modeEl = document.getElementById('mergeMode');
+        const mergeMode = modeEl ? modeEl.value : 'union';
+
+        Promise.all(files.map(f => readJsonFile(f)))
+            .then(jsonArrays => {
+                // Convert each file to map table -> Set(params)
+                const maps = jsonArrays.map(arr => selectionArrayToMap(arr));
+                const merged = mergeSelections(maps, mergeMode);
+                // Apply
+                appData.selections = merged;
+                renderTableList();
+                // Show report
+                showReport();
+                // Update title
+                const title = document.querySelector('#reportContainer .params-title');
+                if (title) {
+                    title.textContent = `Итоговый отчет (${mergeMode === 'union' ? 'объединение' : 'пересечение'}) — файлов: ${files.length}`;
+                }
+            })
+            .catch(err => {
+                alert('Ошибка импорта: ' + (err && err.message ? err.message : String(err)));
+            })
+            .finally(() => {
+                // Reset value to allow reloading same files
+                e.target.value = '';
+            });
+    });
+
+    function readJsonFile(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (!Array.isArray(data)) throw new Error(`Неверный формат JSON в файле ${file.name}`);
+                    resolve(data);
+                } catch (err) {
+                    reject(err);
+                }
+            };
+            reader.onerror = () => reject(new Error(`Не удалось прочитать файл ${file.name}`));
+            reader.readAsText(file);
+        });
+    }
+
+    function selectionArrayToMap(arr) {
+        const map = {};
+        arr.forEach(item => {
+            if (item && item.table && Array.isArray(item.parameters)) {
+                map[item.table] = new Set(item.parameters);
+            }
+        });
+        return map;
+    }
+
+    function mergeSelections(maps, mode) {
+        const result = {};
+        if (!maps || maps.length === 0) return result;
+
+        if (mode === 'intersection') {
+            // Intersection: only params selected by everyone.
+            // Treat missing table as empty (so it will be dropped).
+            const allTableNames = new Set();
+            maps.forEach(m => Object.keys(m).forEach(t => allTableNames.add(t)));
+
+            for (const tableName of allTableNames) {
+                // Start from first map that has this table; if some map doesn't have table -> empty intersection
+                let intersect = null;
+                for (const m of maps) {
+                    const set = m[tableName];
+                    if (!set) { intersect = new Set(); break; }
+                    if (intersect === null) intersect = new Set(set);
+                    else {
+                        for (const v of Array.from(intersect)) {
+                            if (!set.has(v)) intersect.delete(v);
+                        }
+                    }
+                }
+                if (intersect && intersect.size > 0) result[tableName] = intersect;
+            }
+            return result;
+        }
+
+        // Default: union
+        maps.forEach(m => {
+            for (const [tableName, set] of Object.entries(m)) {
+                if (!result[tableName]) result[tableName] = new Set();
+                for (const v of set) result[tableName].add(v);
+            }
+        });
+        return result;
+    }
 
     function loadSelection(data) {
         // Reset current selections
