@@ -1,0 +1,1441 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+  <Russian language="Русский">
+    <Condition1TemplateUnipos>Сумма операции</Condition1TemplateUnipos>
+    <Condition1TemplateUniposFull>
+      Сумма операции. Числовое значение в диапазоне от 0 до 999999999999.
+
+      Варианты использования в чеке:
+      1. Печать суммы: {[1]Al}
+      2. Печать суммы с форматированием: {[1]AlFrd#’(###’###’###’###’)P..}
+      3. Использование в условиях:
+      - {E([1] > 100) || ([1] != 200)} - условие выполняется, если сумма больше 100 мин. единиц или не равна 200 мин. единиц
+      - {C+[1]} - условие выполняется, если сумма присутствует в контексте транзакции
+      - {C-[1]} - условие выполняется, если сумма отсутствует в контексте транзакции
+    </Condition1TemplateUniposFull>
+
+    <Condition2TemplateUnipos>Дополнительная сумма (сдачи)</Condition2TemplateUnipos>
+    <Condition2TemplateUniposFull>
+      Дополнительная сумма (сдачи). Числовое значение в диапазоне от 0 до 999999999999.
+      Варианты использования смотри в элементе 'Сумма операции'.
+    </Condition2TemplateUniposFull>
+
+    <Condition3TemplateUnipos>Сумма оригинальной операции (для операции отмена, возврат)</Condition3TemplateUnipos>
+    <Condition2TemplateUniposFull>
+      Сумма оригинальной операции (для операции отмена, возврат). Числовое значение в диапазоне от 0 до 999999999999.
+      Варианты использования смотри в элементе 'Сумма операции'.
+    </Condition2TemplateUniposFull>
+
+    <Condition4TemplateUnipos>Номер карты клиента</Condition4TemplateUnipos>
+    <Condition4TemplateUniposFull>
+      Номер карты клиента. Числовое значение с длиной строки в диапазоне от 11 до 19 символов.
+
+      Варианты использования в чеке:
+      1. Печать номера карты: {[4]Al}
+      2. Печать номера карты с форматированием: {[4]AmFrt# (**** **** **** **** ####)}
+    </Condition4TemplateUniposFull>
+
+    <Condition5TemplateUnipos>Срок действия карты клиента</Condition5TemplateUnipos>
+    <Condition5TemplateUniposFull>
+      Срок действия карты клиента. Длина строки 4 символа. Формат - ГГММ.
+
+      Варианты использования в чеке:
+      1. Печать срока действия карты с форматированием:  {[5]ArFld#/(##/##)}
+    </Condition5TemplateUniposFull>
+
+    <Condition6TemplateUnipos>Имя владельца карты</Condition6TemplateUnipos>
+    <Condition6TemplateUniposFull>Имя владельца карты.</Condition6TemplateUniposFull>
+
+    <Condition7TemplateUnipos>Способ ввода карты</Condition7TemplateUnipos>
+    <Condition7TemplateUniposFull>
+      Способ ввода карты.Числовое значение:
+      0 - использование карты с магнитной полосой
+      1 - использование карты с чипом
+      2 - ручной ввод номера карты
+
+      Варианты использования в чеке:
+      1. Печать способа ввода карты (по умолчанию): {[7]Al}
+      - 'S' - использование карты с магнитной полосой
+      - 'C' - использование карты с чипом
+      - 'M' - ручной ввод номера карты
+      2. Использование в условиях:
+      - {E([7] == 1) || ([7] == 0)} - условие выполняется, если используется карта с магнитной полосой или чипом
+      - {E([7] != 1)} - условие выполняется, если используется не чиповая карта
+    </Condition7TemplateUniposFull>
+
+    <Condition8TemplateUnipos>Имя операции</Condition8TemplateUnipos>
+    <Condition8TemplateUniposFull>Имя операции.</Condition8TemplateUniposFull>
+
+    <Condition9TemplateUnipos>Имя оригинальной операции (при проведении отмены)</Condition9TemplateUnipos>
+    <Condition9TemplateUniposFull>Имя оригинальной операции (при проведении отмены)</Condition9TemplateUniposFull>
+
+    <Condition10TemplateUnipos>Время операции на терминале</Condition10TemplateUnipos>
+    <Condition10TemplateUniposFull>
+      Время операции на терминале. Формат данных - ЧЧММСС.
+
+      Варианты использования в чеке:
+      1. Печать времени операции (по умолчанию): {[10]Al}. Шаблон форматирования 'по умолчанию' задается в файле ресурсов.
+      2. Печать времени операции  с форматированием: {[10]Fld# ($T[H:M:S])}
+    </Condition10TemplateUniposFull>
+
+    <Condition11TemplateUnipos>Идентификатор терминала</Condition11TemplateUnipos>
+    <Condition11TemplateUniposFull>Идентификатор терминала. Строка буквенно-цифровых символов.</Condition11TemplateUniposFull>
+
+    <Condition12TemplateUnipos>Идентификатор продавца</Condition12TemplateUnipos>
+    <Condition12TemplateUniposFull>Идентификатор продавца. Строка буквенно-цифровых символов.</Condition12TemplateUniposFull>
+
+    <Condition13TemplateUnipos>Символьный код валюты</Condition13TemplateUnipos>
+    <Condition13TemplateUniposFull>Символьный код валюты. Три буквенных символа. Настраивается в справочнике валют.</Condition13TemplateUniposFull>
+
+    <Condition14TemplateUnipos>Код подтверждения</Condition14TemplateUnipos>
+    <Condition14TemplateUniposFull>Код подтверждения</Condition14TemplateUniposFull>
+
+    <Condition15TemplateUnipos>Номер транзакции</Condition15TemplateUnipos>
+    <Condition15TemplateUniposFull>Номер транзакции. Числовое значение в диапазоне от 0 до 999999. При выводе на чек значение дополняется слева нулями до 6 символов.</Condition15TemplateUniposFull>
+
+    <Condition16TemplateUnipos>Комиссия, чаевые</Condition16TemplateUnipos>
+    <Condition16TemplateUniposFull>
+      Комиссия, чаевые. Числовое значение в диапазоне от 0 до 999999999999.
+      Варианты использования смотри в элементе 'Сумма операции'.
+    </Condition16TemplateUniposFull>
+
+    <Condition17TemplateUnipos>Код авторизации</Condition17TemplateUnipos>
+    <Condition17TemplateUniposFull>Код авторизации. Строка из 6 символов.</Condition17TemplateUniposFull>
+
+    <Condition18TemplateUnipos>Номер пакета транзакций (BatchID)</Condition18TemplateUnipos>
+    <Condition18TemplateUniposFull>Номер пакета транзакций (BatchID). Числовое значение в диапазоне от 0 до 999999. При выводе на чек значение дополняется слева нулями до 6 символов.</Condition18TemplateUniposFull>
+
+    <Condition19TemplateUnipos>Код ответа</Condition19TemplateUnipos>
+    <Condition19TemplateUniposFull>
+      Код ответа. 2 цифровых символа в диапазоне от 00 до 99.
+
+      Варианты использования в чеке:
+      1. Печать Код ответа: {[19]Al}
+      2. Использование в условиях:
+      - {E([19] != "00")} - условие выполняется, если код ответа хоста не равен '00'
+    </Condition19TemplateUniposFull>
+
+    <Condition20TemplateUnipos>Дата операции на хосте</Condition20TemplateUnipos>
+    <Condition20TemplateUniposFull>
+      Дата операции на хосте. Формат данных - ДДММГГГГ.
+
+      Варианты использования в чеке:
+      1. Печать даты операции (по умолчанию): {[20]Al}. Шаблон форматирования 'по умолчанию' задается в файле ресурсов.
+      2. Печать даты операции с форматированием: {[20]Fld# ($D[D:M:Y])}
+    </Condition20TemplateUniposFull>
+
+    <Condition21TemplateUnipos>Время операции на хосте</Condition21TemplateUnipos>
+    <Condition21TemplateUniposFull>
+      Время операции на хосте. Формат данных - ЧЧММСС.
+      Варианты использования смотри в элементе 'Время операции на терминале'.
+    </Condition21TemplateUniposFull>
+
+    <Condition22TemplateUnipos>Номер чека</Condition22TemplateUnipos>
+    <Condition22TemplateUniposFull>Номер чека. Числовое значение в диапазоне от 0 до 9999. При выводе на чек значение дополняется слева нулями до 4 символов.</Condition22TemplateUniposFull>
+
+    <Condition23TemplateUnipos>Дата операции на терминале</Condition23TemplateUnipos>
+    <Condition23TemplateUniposFull>
+      Дата операции на терминале. Формат данных - ДДММГГГГ.
+      Варианты использования смотри в элементе 'Дата операции на хосте'.
+    </Condition23TemplateUniposFull>
+
+    <Condition24TemplateUnipos>Наименование продавца</Condition24TemplateUnipos>
+    <Condition24TemplateUniposFull>Наименование продавца.</Condition24TemplateUniposFull>
+
+    <Condition25TemplateUnipos>Адрес продавца</Condition25TemplateUnipos>
+    <Condition25TemplateUniposFull>Адрес продавца.</Condition25TemplateUniposFull>
+
+    <Condition26TemplateUnipos>Признак ввода пин-кода</Condition26TemplateUnipos>
+    <Condition26TemplateUniposFull>
+      Признак ввода пин-кода. Любое значение.
+      Варианты использования в чеке:
+      - {C+[26]} - условие выполняется, если признак ввода пин-кода присутствует в контексте транзакции
+      - {C-[26]} - условие выполняется, если признак ввода пин-кода отсутствует в контексте транзакции
+    </Condition26TemplateUniposFull>
+
+    <Condition27TemplateUnipos>Признак необходимости вывода подписи чека</Condition27TemplateUnipos>
+    <Condition27TemplateUniposFull>
+      Признак необходимости вывода подписи чека. Любое значение.
+      Варианты использования смотри в элементе 'Признак ввода пин-кода'.
+    </Condition27TemplateUniposFull>
+
+    <Condition28TemplateUnipos>Признак успешного выполнения операции (операция одобрена)</Condition28TemplateUnipos>
+    <Condition28TemplateUniposFull>
+      Признак успешного выполнения операции (операция одобрена). Любое значение.
+      Варианты использования смотри в элементе 'Признак ввода пин-кода'.
+    </Condition28TemplateUniposFull>
+
+    <Condition29TemplateUnipos>Название карты</Condition29TemplateUnipos>
+    <Condition29TemplateUniposFull>Название карты</Condition29TemplateUniposFull>
+
+    <Condition30TemplateUnipos>Детализация платежа</Condition30TemplateUnipos>
+    <Condition30TemplateUniposFull>Детализация платежа</Condition30TemplateUniposFull>
+
+    <Condition31TemplateUnipos>Код платежа (Payment Account Number)</Condition31TemplateUnipos>
+    <Condition31TemplateUniposFull>Код платежа (Payment Account Number)</Condition31TemplateUniposFull>
+
+    <Condition32TemplateUnipos>Период платежа</Condition32TemplateUnipos>
+    <Condition32TemplateUniposFull>Период платежа</Condition32TemplateUniposFull>
+
+    <Condition33TemplateUnipos>Назначение платежа</Condition33TemplateUnipos>
+    <Condition33TemplateUniposFull>Назначение платежа</Condition33TemplateUniposFull>
+
+    <Condition34TemplateUnipos>Сообщение хоста</Condition34TemplateUnipos>
+    <Condition34TemplateUniposFull>Сообщение хоста</Condition34TemplateUniposFull>
+
+    <Condition36TemplateUnipos>Имя файла графического логотипа</Condition36TemplateUnipos>
+    <Condition36TemplateUniposFull>Имя файла графического логотипа</Condition36TemplateUniposFull>
+
+    <Condition38TemplateUnipos>Признак печати копии чека</Condition38TemplateUnipos>
+    <Condition38TemplateUniposFull>
+      Признак печати копии чека. Любое значение.
+      Варианты использования смотри в элементе 'Признак ввода пин-кода'.
+    </Condition38TemplateUniposFull>
+
+    <Condition39TemplateUnipos>AID</Condition39TemplateUnipos>
+    <Condition39TemplateUniposFull>AID</Condition39TemplateUniposFull>
+
+    <Condition40TemplateUnipos>Название элемента "Биллинговые начисления"</Condition40TemplateUnipos>
+    <Condition40TemplateUniposFull>Название элемента "Биллинговые начисления".</Condition40TemplateUniposFull>
+
+    <Condition41TemplateUnipos>Сумма скидки "Биллинговых начислений"</Condition41TemplateUnipos>
+    <Condition41TemplateUniposFull>
+      Сумма скидки "Биллинговых начислений".Числовое значение в диапазоне от 0 до 999999999999.
+      Варианты использования смотри в элементе 'Сумма операции'.
+    </Condition41TemplateUniposFull>
+
+    <Condition42TemplateUnipos>Название типа счета баланса</Condition42TemplateUnipos>
+    <Condition42TemplateUniposFull>Название типа счета баланса</Condition42TemplateUniposFull>
+
+    <Condition43TemplateUnipos>Сумма баланса</Condition43TemplateUnipos>
+    <Condition43TemplateUniposFull>Сумма баланса</Condition43TemplateUniposFull>
+
+    <Condition44TemplateUnipos>TVR</Condition44TemplateUnipos>
+    <Condition44TemplateUniposFull>
+      TVR - Terminal Verification Results.
+    </Condition44TemplateUniposFull>
+
+    <Condition45TemplateUnipos>TSI</Condition45TemplateUnipos>
+    <Condition45TemplateUniposFull>
+      TSI - Transaction Status Information.
+    </Condition45TemplateUniposFull>
+
+    <Condition46TemplateUnipos>CID</Condition46TemplateUnipos>
+    <Condition46TemplateUniposFull>
+      CID - Cryptogram Information Data.
+    </Condition46TemplateUniposFull>
+
+    <Condition51TemplateUnipos>Тип (идентификатор) операции</Condition51TemplateUnipos>
+    <Condition51TemplateUniposFull>
+      Тип (идентификатор) операции.
+
+      Допустимые значения:
+      0 - Неизвестный тип
+      1 - Оплата
+      2 - Возврат
+      3 - Отмена
+      4 - Предавторизация
+      5 - Завершение расчета
+      6 - Пополение счета
+      7 - Выдача наличных
+      9 - Загрузка ключей
+      10 - Проверка связи
+      11 - Сверка итогов
+      14 - Баланс
+      15 - Минивыписка
+      18 - Смена ПИН'а
+      20 - Лояльность
+      22 - Оплата со сдачей
+      23 - Разблокировка приложения
+      24 - Разблокировка PIN
+      25 - Платеж
+      26 - Оплата телефона
+      27 - CreditVoucher
+      29 - Оплата телефона за наличные
+      30 - Загрузка стоп-листа
+      31 - Установка ПИН клиента
+
+      Варианты использования в чеке:
+      1. Использование в условиях:
+      - {E([51] == 1) || ([51] == 2)} - условие выполняется, если тип операции 'Оплата' или 'Возврат'
+      - {E([51] != 1)} - условие выполняется, если тип операции отличен от 'Оплата'
+    </Condition51TemplateUniposFull>
+
+    <Condition52TemplateUnipos>Имя карточного приложения </Condition52TemplateUnipos>
+    <Condition52TemplateUniposFull>Имя карточного приложения.</Condition52TemplateUniposFull>
+
+    <Condition53TemplateUnipos>Оригинальная сумма операции (без комиссий)</Condition53TemplateUnipos>
+    <Condition53TemplateUniposFull>
+      Оригинальная сумма операции (без комиссий). Числовое значение в диапазоне от 0 до 999999999999.
+      Варианты использования смотри в элементе 'Сумма операции'.
+    </Condition53TemplateUniposFull>
+
+    <Condition54TemplateUnipos>Полное название валюты</Condition54TemplateUnipos>
+    <Condition54TemplateUniposFull>Полное название валюты.</Condition54TemplateUniposFull>
+
+    <Condition55TemplateUnipos>Оригинальная сумма операции (введенная кассиром).</Condition55TemplateUnipos>
+    <Condition55TemplateUniposFull>Оригинальная сумма операции (введенная кассиром).</Condition55TemplateUniposFull>
+
+    <Condition56TemplateUnipos>Количество прерванных автоотмен</Condition56TemplateUnipos>
+    <Condition56TemplateUniposFull>Количество прерванных автоотмен</Condition56TemplateUniposFull>
+    
+    <Condition66TemplateUnipos>Признак несовпадения сверки итогов</Condition66TemplateUnipos>
+    <Condition66TemplateUniposFull>Признак несовпадения сверки итогов</Condition66TemplateUniposFull>
+
+	<Condition68TemplateUnipos>Сумма оплаты без сдачи</Condition68TemplateUnipos>
+    <Condition68TemplateUniposFull>Сумма оплаты без сдачи</Condition68TemplateUniposFull>
+	
+    <Condition69TemplateUnipos>Название типа комиссии</Condition69TemplateUnipos>
+    <Condition69TemplateUniposFull>Тип каждого элемента комиссии, приходящего с хоста в 46 поле</Condition69TemplateUniposFull>
+
+    <Condition70TemplateUnipos>Сумма комиссии хоста</Condition70TemplateUnipos>
+    <Condition70TemplateUniposFull>Сумма комиссии, полученная с хоста в 46 поле</Condition70TemplateUniposFull>
+
+    <Condition71TemplateUnipos>Название кошелька</Condition71TemplateUnipos>
+    <Condition71TemplateUniposFull>Название кошелька, заданное в поле "Наименование для отображения"</Condition71TemplateUniposFull>
+
+    <Condition72TemplateUnipos>Дополнительные данные для печати на чеке</Condition72TemplateUnipos>
+    <Condition72TemplateUniposFull>Дополнительные данные для печати на чеке, полученные с хоста в поле 31</Condition72TemplateUniposFull>
+    
+    <Condition73TemplateUnipos>Доступный баланс по кошельку</Condition73TemplateUnipos>
+    <Condition73TemplateUniposFull>Доступный баланс по кошельку, получаемый в ответном сообщении хоста</Condition73TemplateUniposFull>
+
+    <Condition74TemplateUnipos>Баланс из поля 54. Тип счета.</Condition74TemplateUnipos>
+    <Condition74TemplateUniposFull>Тип счета текущего элемента баланса, приходящего с хоста в поле 54.</Condition74TemplateUniposFull>
+
+    <Condition75TemplateUnipos>Баланс из поля 54. Валюта.</Condition75TemplateUnipos>
+    <Condition75TemplateUniposFull>Валюта операции текущего элемента баланса, приходящего с хоста в поле 54.</Condition75TemplateUniposFull>
+
+    <Condition76TemplateUnipos>Баланс из поля 54. Сумма.</Condition76TemplateUnipos>
+    <Condition76TemplateUniposFull>Сумма операции текущего элемента баланса, приходящего с хоста в поле 54.</Condition76TemplateUniposFull>
+    
+    <Condition77TemplateUnipos>Баланс из поля 54. Тип суммы.</Condition77TemplateUnipos>
+    <Condition77TemplateUniposFull>Тип суммы операции текущего элемента баланса, приходящего с хоста в поле 54.</Condition77TemplateUniposFull>
+
+    <Condition78TemplateUnipos>Баланс из поля 54. Количество элементов.</Condition78TemplateUnipos>
+    <Condition78TemplateUniposFull>Количество элементов баланса, полученного с хоста в поле 54.</Condition78TemplateUniposFull>
+
+    <Condition79TemplateUnipos>Дата транзакции текущего элемента мини выписки.</Condition79TemplateUnipos>
+    <Condition79TemplateUniposFull>Дата транзакции текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition79TemplateUniposFull>
+
+    <Condition80TemplateUnipos>Время транзакции текущего элемента мини выписки.</Condition80TemplateUnipos>
+    <Condition80TemplateUniposFull>Время транзакции текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition80TemplateUniposFull>
+
+    <Condition81TemplateUnipos>Тип транзакции текущего элемента мини выписки.</Condition81TemplateUnipos>
+    <Condition81TemplateUniposFull>Тип транзакции текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition81TemplateUniposFull>
+
+    <Condition82TemplateUnipos>Сумма транзакции текущего элемента мини выписки.</Condition82TemplateUnipos>
+    <Condition82TemplateUniposFull>Сумма транзакции текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition82TemplateUniposFull>
+    
+    <Condition83TemplateUnipos>Валюта текущего элемента мини выписки.</Condition83TemplateUnipos>
+    <Condition83TemplateUniposFull>Валюта текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition83TemplateUniposFull>
+
+    <Condition84TemplateUnipos>Идентификатор терминала текущего элемента мини выписки.</Condition84TemplateUnipos>
+    <Condition84TemplateUniposFull>Идентификатор терминала текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition84TemplateUniposFull>
+
+    <Condition85TemplateUnipos>Имя и место установки терминала текущего элемента мини выписки.</Condition85TemplateUnipos>
+    <Condition85TemplateUniposFull>Имя и место установки терминала текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition85TemplateUniposFull>
+
+    <Condition86TemplateUnipos>Код авторизации текущего элемента мини выписки.</Condition86TemplateUnipos>
+    <Condition86TemplateUniposFull>Код авторизации текущего элемента мини выписки, полученного в тэга 021 поля 48.</Condition86TemplateUniposFull>
+
+    <Condition87TemplateUnipos>Сумма всех хостовых комиссий</Condition87TemplateUnipos>
+    <Condition87TemplateUniposFull>Сумма всех хостовых комиссий.</Condition87TemplateUniposFull>
+    
+    <Condition88TemplateUnipos>Сумма отмена вместе со всеми комиссиями</Condition88TemplateUnipos>
+    <Condition88TemplateUniposFull>Сумма отмена вместе со всеми комиссиями.</Condition88TemplateUniposFull>
+
+    <Condition89TemplateUnipos>Название параметра платежа</Condition89TemplateUnipos>
+    <Condition89TemplateUniposFull>Название параметра платежа</Condition89TemplateUniposFull>
+
+    <Condition90TemplateUnipos>Значение параметра платежа</Condition90TemplateUnipos>
+    <Condition90TemplateUniposFull>Значение параметра платежа</Condition90TemplateUniposFull>
+
+    <Condition91TemplateUnipos>Имя клиента</Condition91TemplateUnipos>
+    <Condition91TemplateUniposFull>Имя клиента (может приходить с хоста при выполнении платежа)</Condition91TemplateUniposFull>
+
+    <Condition92TemplateUnipos>Название счета</Condition92TemplateUnipos>
+    <Condition92TemplateUniposFull>Название счета</Condition92TemplateUniposFull>
+	
+    <Condition100TemplateUnipos>Сумма  бонусов</Condition100TemplateUnipos>
+    <Condition100TemplateUniposFull>Сумма  бонусов</Condition100TemplateUniposFull>
+	
+	<Condition101TemplateUnipos>Признак бонусной фазы</Condition101TemplateUnipos>
+    <Condition101TemplateUniposFull>Признак бонусной фазы операции Оплата+Списание бонусов</Condition101TemplateUniposFull>
+
+	<Condition102TemplateUnipos>Тип (идентификатор) оригинальной операции при проведении отмен</Condition102TemplateUnipos>
+    <Condition102TemplateUniposFull>Тип (идентификатор) оригинальной операции при проведении отмен</Condition102TemplateUniposFull>
+	
+	<Condition103TemplateUnipos>Сумма основной  операции Оплата+Списание бонусов</Condition103TemplateUnipos>
+    <Condition103TemplateUniposFull>Сумма основной  операции Оплата+Списание бонусов</Condition103TemplateUniposFull>	
+	
+	<Condition104TemplateUnipos>Сумма основной  и бонусной операции Оплата+Списание бонусов</Condition104TemplateUnipos>
+    <Condition104TemplateUniposFull>Сумма основной  и бонусной операции Оплата+Списание бонусов</Condition104TemplateUniposFull>
+	
+	<Condition109TemplateUnipos>Номер чека отмененной операции</Condition109TemplateUnipos>
+    <Condition109TemplateUniposFull>Номер чека отмененной операции. Числовое значение в диапазоне от 0 до 9999. При выводе на чек значение дополняется слева нулями до 4 символов.</Condition109TemplateUniposFull>
+
+	<Condition110TemplateUnipos>Признак успешного выполнения задания</Condition110TemplateUnipos>
+    <Condition110TemplateUniposFull>Признак успешного выполнения задания</Condition110TemplateUniposFull>
+	
+	<Condition111TemplateUnipos>Наименование организации</Condition111TemplateUnipos>
+    <Condition111TemplateUniposFull>Наименование организации. Приходит с хоста в 48 поле. Тэг 090</Condition111TemplateUniposFull>
+	
+	<Condition112TemplateUnipos>Адрес установки</Condition112TemplateUnipos>
+    <Condition112TemplateUniposFull>Адрес установки. Приходит с хоста в 48 поле. Тэг 091</Condition112TemplateUniposFull>
+	
+	<Condition113TemplateUnipos>Номер телефона</Condition113TemplateUnipos>
+    <Condition113TemplateUniposFull>Номер телефона. Приходит с хоста в 48 поле. Тэг 092</Condition113TemplateUniposFull>
+	
+	<Condition114TemplateUnipos>Резерв 1</Condition114TemplateUnipos>
+    <Condition114TemplateUniposFull>Резерв 1. Приходит с хоста в 48 поле. Тэг 093</Condition114TemplateUniposFull>
+	
+	<Condition115TemplateUnipos>Резерв 2</Condition115TemplateUnipos>
+    <Condition115TemplateUniposFull>Резерв 2. Приходит с хоста в 48 поле. Тэг 094</Condition115TemplateUniposFull>
+	
+	<Condition116TemplateUnipos>Резерв 3</Condition116TemplateUnipos>
+    <Condition116TemplateUniposFull>Резерв 3. Приходит с хоста в 48 поле. Тэг 095</Condition116TemplateUniposFull>
+	
+    <Condition117TemplateUnipos>Подпись, введенная на экране терминала</Condition117TemplateUnipos>
+    <Condition117TemplateUniposFull>Подпись, введенная на экране терминала</Condition117TemplateUniposFull>
+	
+	<Condition120TemplateUnipos>DF74 KVR</Condition120TemplateUnipos>
+    <Condition120TemplateUniposFull>Бесконтактный МИР. DF74 KVR (Kernel Verification Results)</Condition120TemplateUniposFull>
+	
+	<Condition121TemplateUnipos>9F70 CDA Result</Condition121TemplateUnipos>
+    <Condition121TemplateUniposFull>Бесконтактный МИР. 9F70 CDA Result.</Condition121TemplateUniposFull>
+
+	<Condition122TemplateUnipos>50 Application Label</Condition122TemplateUnipos>
+    <Condition122TemplateUniposFull>Бесконтактный МИР. 50 Application Label.</Condition122TemplateUniposFull>
+	
+    <Condition123TemplateUniposFull>
+      Язык печати чеков. Английский или арабский.
+    </Condition123TemplateUniposFull>
+	
+    <Condition124TemplateUnipos>Признак успешного выполнения CDCVM</Condition124TemplateUnipos>
+    <Condition124TemplateUniposFull> Бесконтактный МИР. Признак успешного выполнения CDCVM
+      Варианты использования в чеке:
+      - {C+[124]} - условие выполняется, если признак успешного выполнения CDCVM присутствует в контексте транзакции
+      - {C-[124]} - условие выполняется, если признак успешного выполнения CDCVM отсутствует в контексте транзакции
+	</Condition124TemplateUniposFull>	
+
+    <Condition125TemplateUnipos>Итоговая сумма транзакций POS-терминала</Condition125TemplateUnipos>
+    <Condition125TemplateUniposFull>Итоговая сумма POS-терминала. Элемент печатается на чеке при несовпадении итогов.</Condition125TemplateUniposFull>
+
+    <Condition126TemplateUnipos>Итоговая сумма транзакций хоста</Condition126TemplateUnipos>
+    <Condition126TemplateUniposFull>Итоговая сумма хоста. Элемент печатается на чеке при несовпадении итогов.</Condition126TemplateUniposFull>
+	
+    <Condition200TemplateUnipos>Инициализация элемента "Биллинговые начисления"</Condition200TemplateUnipos>
+    <Condition200TemplateUniposFull>Инициализация элемента "Биллинговые начисления". Элемент используется для организации циклов по массиву 'Комиссий/Скидок', примененных к операции.</Condition200TemplateUniposFull>
+
+    <Condition201TemplateUnipos>Перемещение по циклу"Биллинговые начисления"</Condition201TemplateUnipos>
+    <Condition201TemplateUniposFull>Перемещение по циклу"Биллинговые начисления". Элемент используется для организации циклов по массиву 'Комиссий/Скидок', примененных к операции.</Condition201TemplateUniposFull>
+
+    <Condition202TemplateUnipos>Количество элементов в цикле "Биллинговые начисления"</Condition202TemplateUnipos>
+    <Condition202TemplateUniposFull>Количество элементов в цикле "Биллинговые начисления". Элемент используется для организации циклов по массиву 'Комиссий/Скидок', примененных к операции.</Condition202TemplateUniposFull>
+
+    <Condition203TemplateUnipos>Инициализация цикла печати "баланс"</Condition203TemplateUnipos>
+    <Condition203TemplateUniposFull>Инициализация цикла печати "баланс". Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition203TemplateUniposFull>
+
+    <Condition204TemplateUnipos>Перемещение по циклу баланса</Condition204TemplateUnipos>
+    <Condition204TemplateUniposFull>Перемещение по циклу баланса.  Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition204TemplateUniposFull>
+
+    <Condition205TemplateUnipos>Количество элементов списка баланса</Condition205TemplateUnipos>
+    <Condition205TemplateUniposFull>Количество элементов списка баланса.  Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition205TemplateUniposFull>
+
+    <Condition209TemplateUnipos>Инициализация цикла печати комиссий хоста</Condition209TemplateUnipos>
+    <Condition209TemplateUniposFull>Инициализация цикла печати комиссий хоста. Элемент используется для организации циклов по массиву данных комиссий хоста.</Condition209TemplateUniposFull>
+
+    <Condition210TemplateUnipos>Перемещение по циклу комиссий хоста</Condition210TemplateUnipos>
+    <Condition210TemplateUniposFull>Перемещение по циклу комиссий хоста.  Элемент используется для организации циклов по массиву данных  комиссий хоста.</Condition210TemplateUniposFull>
+
+    <Condition211TemplateUnipos>Количество элементов комиссий хоста</Condition211TemplateUnipos>
+    <Condition211TemplateUniposFull>Количество элементов комиссий хоста.  Элемент используется для организации циклов по массиву данных комиссий хоста.</Condition211TemplateUniposFull>
+
+    <Condition212TemplateUnipos>Инициализация цикла печати "баланс" из 54 поля</Condition212TemplateUnipos>
+    <Condition212TemplateUniposFull>Инициализация цикла печати "баланс" из 54 поля. Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition212TemplateUniposFull>
+
+    <Condition213TemplateUnipos>Перемещение по циклу баланса из 54 поля</Condition213TemplateUnipos>
+    <Condition213TemplateUniposFull>Перемещение по циклу баланса из 54 поля.  Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition213TemplateUniposFull>
+
+    <Condition214TemplateUnipos>Количество элементов списка баланса из 54 поля</Condition214TemplateUnipos>
+    <Condition214TemplateUniposFull>Количество элементов списка баланса из 54 поля.  Элемент используется для организации циклов по массиву данных баланса, загруженных с хоста.</Condition214TemplateUniposFull>
+
+    <Condition215TemplateUnipos>Инициализация цикла печати минивыписки</Condition215TemplateUnipos>
+    <Condition215TemplateUniposFull>Инициализация цикла печати минивыписки. Элемент используется для организации циклов по массиву данных минивыписки, загруженных с хоста.</Condition215TemplateUniposFull>
+
+    <Condition216TemplateUnipos>Перемещение по циклу минивыписки</Condition216TemplateUnipos>
+    <Condition216TemplateUniposFull>Перемещение по циклу минивыписки.  Элемент используется для организации циклов по массиву данных минивыписки, загруженных с хоста.</Condition216TemplateUniposFull>
+
+    <Condition217TemplateUnipos>Количество элементов списка минивыписки</Condition217TemplateUnipos>
+    <Condition217TemplateUniposFull>Количество элементов списка минивыписки.  Элемент используется для организации циклов по массиву данных минивыписки, загруженных с хоста.</Condition217TemplateUniposFull>
+
+    <Condition218TemplateUnipos>Инициализация цикла печати параметров платежа</Condition218TemplateUnipos>
+    <Condition218TemplateUniposFull>Инициализация цикла печати параметров платежа. Элемент используется для организации циклов по массиву данных параметров платежа.</Condition218TemplateUniposFull>
+
+    <Condition219TemplateUnipos>Перемещение по циклу параметров платежа</Condition219TemplateUnipos>
+    <Condition219TemplateUniposFull>Перемещение по циклу параметров платежа.  Элемент используется для организации циклов по массиву данных минивыписки, загруженных с хоста.</Condition219TemplateUniposFull>
+
+    <Condition220TemplateUnipos>Количество элементов списка параметров платежа</Condition220TemplateUnipos>
+    <Condition220TemplateUniposFull>Количество элементов списка параметров платежа.  Элемент используется для организации циклов по массиву данных параметров платежа.</Condition220TemplateUniposFull>
+
+    <Condition300TemplateUnipos>Количество накопленных операций</Condition300TemplateUnipos>
+    <Condition300TemplateUniposFull>Количество накопленных операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition300TemplateUniposFull>
+
+    <Condition301TemplateUnipos>Сумма накопленных операций</Condition301TemplateUnipos>
+    <Condition301TemplateUniposFull>Сумма накопленных операций (оригинальные суммы). Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition301TemplateUniposFull>
+
+    <Condition302TemplateUnipos>Сумма накопленных операций (оригинальные суммы)</Condition302TemplateUnipos>
+    <Condition302TemplateUniposFull>Сумма накопленных операций (оригинальные суммы). Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition302TemplateUniposFull>
+
+    <Condition303TemplateUnipos>Сумма накопленных комиссий</Condition303TemplateUnipos>
+    <Condition303TemplateUniposFull>Сумма накопленных комиссий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition303TemplateUniposFull>
+
+    <Condition304TemplateUnipos>Сумма неотмененных дебетовых комиссий</Condition304TemplateUnipos>
+    <Condition304TemplateUniposFull>Сумма неотмененных дебетовых комиссий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition304TemplateUniposFull>
+
+    <Condition305TemplateUnipos>Сумма неотмененных кредитовых комиссий</Condition305TemplateUnipos>
+    <Condition305TemplateUniposFull>Сумма неотмененных кредитовых комиссий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition305TemplateUniposFull>
+    
+    <Condition306TemplateUnipos>Сумма комиссий и скидок терминала для операции</Condition306TemplateUnipos>
+    <Condition306TemplateUniposFull>Сумма комиссий и скидок терминала для операции. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition306TemplateUniposFull>
+	
+	<Condition307TemplateUnipos>Сумма без комиссий и скидок терминала для операции</Condition307TemplateUnipos>
+    <Condition307TemplateUniposFull>Сумма без комиссий и скидок терминала для операции. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition307TemplateUniposFull>
+
+    <Condition310TemplateUnipos>Накопленная сумма дебетовых операций</Condition310TemplateUnipos>
+    <Condition310TemplateUniposFull>Накопленная сумма дебетовых операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition310TemplateUniposFull>
+
+    <Condition311TemplateUnipos>Накопленная сумма кредитных операций</Condition311TemplateUnipos>
+    <Condition311TemplateUniposFull>Накопленная сумма кредитных операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition311TemplateUniposFull>
+
+    <Condition312TemplateUnipos>Накопленная сумма неотмененных дебетовых операций</Condition312TemplateUnipos>
+    <Condition312TemplateUniposFull>Накопленная сумма неотмененных дебетовых операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition312TemplateUniposFull>
+
+    <Condition313TemplateUnipos>Накопленная сумма неотмененных кредитовых операций</Condition313TemplateUnipos>
+    <Condition313TemplateUniposFull>Накопленная сумма неотмененных кредитовых операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition313TemplateUniposFull>
+    
+    <Condition320TemplateUnipos>Количество накопленных операций за исключением отмен</Condition320TemplateUnipos>
+    <Condition320TemplateUniposFull>Количество накопленных операций за исключением отмен. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition320TemplateUniposFull>
+    
+    <Condition321TemplateUnipos>Сумма всех накопленных операций по валюте за исключением отмен</Condition321TemplateUnipos>
+    <Condition321TemplateUniposFull>Сумма всех накопленных операций по валюте за исключением отмен. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition321TemplateUniposFull>
+
+    <Condition322TemplateUnipos>Сумма всех накопленных операций по валюте за исключением отмен (оригинальные суммы)</Condition322TemplateUnipos>
+    <Condition322TemplateUniposFull>Сумма всех накопленных операций по валюте за исключением отмен (оригинальные суммы). Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition322TemplateUniposFull>
+
+    <Condition323TemplateUnipos>Сумма всех накопленных коммисий по валюте за исключением отмен</Condition323TemplateUnipos>
+    <Condition323TemplateUniposFull>Сумма всех накопленных коммисий по валюте за исключением отмен. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition323TemplateUniposFull>
+
+    <Condition324TemplateUnipos>Накопленная сумма дебетовых операций без комиссиий</Condition324TemplateUnipos>
+    <Condition324TemplateUniposFull>Накопленная сумма дебетовых операций без комиссиий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition324TemplateUniposFull>
+
+    <Condition325TemplateUnipos>Накопленная сумма кредитовых операций без комиссиий</Condition325TemplateUnipos>
+    <Condition325TemplateUniposFull>Накопленная сумма кредитовых операций без комиссиий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition325TemplateUniposFull>
+
+    <Condition326TemplateUnipos>Общее количество основных и бонусных операций</Condition326TemplateUnipos>
+    <Condition326TemplateUniposFull>Общее количество основных и бонусных операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition326TemplateUniposFull>
+
+    <Condition327TemplateUnipos>Накопленная сумма основных и бонусных операций</Condition327TemplateUnipos>
+    <Condition327TemplateUniposFull>Накопленная сумма основных и бонусных операций. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition327TemplateUniposFull>
+    
+	<Condition328TemplateUnipos>Номер первого чека</Condition328TemplateUnipos>
+    <Condition328TemplateUniposFull>Номер чека первой операции для данного виртуального терминала.</Condition328TemplateUniposFull>
+	
+	<Condition329TemplateUnipos>Номер первого чека</Condition329TemplateUnipos>
+    <Condition329TemplateUniposFull>Номер чека последней  операции для данного виртуального терминала.</Condition329TemplateUniposFull>
+	
+	<Condition330TemplateUnipos>Дата первой операции</Condition330TemplateUnipos>
+    <Condition330TemplateUniposFull>Дата первой операции для данного виртуального терминала.</Condition330TemplateUniposFull>
+	
+	<Condition331TemplateUnipos>Дата последней  операции</Condition331TemplateUnipos>
+    <Condition331TemplateUniposFull>Дата последней  операции для данного виртуального терминала.</Condition331TemplateUniposFull>
+	
+	<Condition332TemplateUnipos>Время первой операции</Condition332TemplateUnipos>
+    <Condition332TemplateUniposFull>Время первой операции для данного виртуального терминала.</Condition332TemplateUniposFull>
+	
+	<Condition333TemplateUnipos>Время первой операции</Condition333TemplateUnipos>
+    <Condition333TemplateUniposFull>Время первой операции для данного виртуального терминала.</Condition333TemplateUniposFull>
+	
+	<Condition334TemplateUnipos>Offline подтверждение</Condition334TemplateUnipos>
+    <Condition334TemplateUniposFull>Признак Offline подтверждения операции.</Condition334TemplateUniposFull>
+	
+	<Condition335TemplateUnipos>Накопленная сумма неотмененных дебетовых операций без комиссий</Condition335TemplateUnipos>
+    <Condition335TemplateUniposFull>Накопленная сумма неотмененных дебетовых операций без комиссий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition335TemplateUniposFull>
+	
+	<Condition336TemplateUnipos>Накопленная сумма неотмененных дебетовых операций без учета скидок и комиссий</Condition336TemplateUnipos>
+    <Condition336TemplateUniposFull>Накопленная сумма неотмененных дебетовых операций без учета скидок и комиссий. Числовое значение в диапазоне от 0 до 999999999999. Элемент используется для печати отчетов.</Condition336TemplateUniposFull>
+	
+	<Condition337TemplateUnipos>Наименование платежа</Condition337TemplateUnipos>
+    <Condition337TemplateUniposFull>Наименование платежа. Элемент используется для печати отчетов.</Condition337TemplateUniposFull>	
+	
+	<Condition338TemplateUnipos>Количество платежей</Condition338TemplateUnipos>
+    <Condition338TemplateUniposFull>Количество платежей. Элемент используется для печати отчетов.</Condition338TemplateUniposFull>	
+	
+	<Condition339TemplateUnipos>Сумма платежей</Condition339TemplateUnipos>
+    <Condition339TemplateUniposFull>Сумма платежей. Элемент используется для печати отчетов.</Condition339TemplateUniposFull>
+	
+	<Condition340TemplateUnipos>Количество накопленных операций без учета операций платеж</Condition340TemplateUnipos>
+    <Condition340TemplateUniposFull>Количество накопленных операций без учета операций платеж. Элемент используется для печати отчетов.</Condition340TemplateUniposFull>
+	
+	<Condition341TemplateUnipos>Сумма накопленных операций без учета операций платеж</Condition341TemplateUnipos>
+    <Condition341TemplateUniposFull>Сумма накопленных операций без учета операций платеж. Элемент используется для печати отчетов.</Condition341TemplateUniposFull>
+	
+	<Condition342TemplateUnipos>Номер карты получателя</Condition342TemplateUnipos>
+    <Condition342TemplateUniposFull>Номер карты получателя.</Condition342TemplateUniposFull>
+	
+	<Condition343TemplateUnipos>Сумма задолжности клиента</Condition343TemplateUnipos>
+    <Condition343TemplateUniposFull>Сумма задолжности клиента.</Condition343TemplateUniposFull>
+
+	<Condition344TemplateUnipos>Сумма накопленных выданных наличных</Condition344TemplateUnipos>
+    <Condition344TemplateUniposFull>Сумма накопленных выданных наличных. Элемент используется для печати отчетов.</Condition344TemplateUniposFull>
+	
+	<Condition345TemplateUnipos>Название товара</Condition345TemplateUnipos>
+    <Condition345TemplateUniposFull>Название товара. Элемент используется для печати отчетов.</Condition345TemplateUniposFull>
+	
+	<Condition346TemplateUnipos>Цена товара</Condition346TemplateUnipos>
+    <Condition346TemplateUniposFull>Цена товара. Элемент используется для печати отчетов.</Condition346TemplateUniposFull>
+	
+	<Condition347TemplateUnipos>Количество товара</Condition347TemplateUnipos>
+    <Condition347TemplateUniposFull>Количество товара. Элемент используется для печати отчетов.</Condition347TemplateUniposFull>
+	
+	<Condition348TemplateUnipos>Название отдела товаров</Condition348TemplateUnipos>
+    <Condition348TemplateUniposFull>Название отдела товаров. Элемент используется для печати отчетов.</Condition348TemplateUniposFull>
+
+	<Condition349TemplateUnipos>Количество неотмененных платежей наличными</Condition349TemplateUnipos>
+    <Condition349TemplateUniposFull>Количество неотмененных платежей наличными.</Condition349TemplateUniposFull>
+	
+	<Condition350TemplateUnipos>Сумма неотмененных платежей наличными</Condition350TemplateUnipos>
+    <Condition350TemplateUniposFull>Сумма неотмененных платежей наличными.</Condition350TemplateUniposFull>
+
+	<Condition351TemplateUnipos>Признак оплаты наличными</Condition351TemplateUnipos>
+    <Condition351TemplateUniposFull>Признак оплаты наличными.</Condition351TemplateUniposFull>
+	
+	<Condition352TemplateUnipos>Общее количество платежей</Condition352TemplateUnipos>
+    <Condition352TemplateUniposFull>Общее количество платежей (включая наличными) (включая все отмененные).</Condition352TemplateUniposFull>
+	
+	<Condition353TemplateUnipos>Общая сумма платежей</Condition353TemplateUnipos>
+    <Condition353TemplateUniposFull>Общая сумма платежей (включая наличными) (включая все отмененные).</Condition353TemplateUniposFull>
+	
+	<Condition354TemplateUnipos>Интерактивня скидка</Condition354TemplateUnipos>
+    <Condition354TemplateUniposFull>Скидка полученная при дополнительном запросе от ККМ.</Condition354TemplateUniposFull>
+	
+	<Condition355TemplateUnipos>Количество всех отмененных платежей</Condition355TemplateUnipos>
+    <Condition355TemplateUniposFull>Количество всех отмененных платежей.</Condition355TemplateUniposFull>
+	
+	<Condition356TemplateUnipos>Признак отмены операции </Condition356TemplateUnipos>
+    <Condition356TemplateUniposFull>Признак отмены операции .</Condition356TemplateUniposFull>
+
+	<Condition357TemplateUnipos>Имя операции</Condition357TemplateUnipos>
+    <Condition357TemplateUniposFull>Имя операции.</Condition357TemplateUniposFull>
+
+	<Condition358TemplateUnipos>Общее количество платежей</Condition358TemplateUnipos>
+    <Condition358TemplateUniposFull>Общее количество платежей (включая наличными) (не включая все отмененные).</Condition358TemplateUniposFull>
+
+	<Condition359TemplateUnipos>Сумма всех отмененных платежей</Condition359TemplateUnipos>
+    <Condition359TemplateUniposFull>Сумма всех отмененных платежей.</Condition359TemplateUniposFull>
+
+	<Condition360TemplateUnipos>Итоговая сумма отдела</Condition360TemplateUnipos>
+    <Condition360TemplateUniposFull>Итоговая сумма отдела.</Condition360TemplateUniposFull>
+
+	<Condition361TemplateUnipos>Количество отделов</Condition361TemplateUnipos>
+    <Condition361TemplateUniposFull>Количество отделов.</Condition361TemplateUniposFull>
+
+	<Condition362TemplateUnipos>Количество операций с выдочей наличных</Condition362TemplateUnipos>
+    <Condition362TemplateUniposFull>Количество операций с выдочей наличных.</Condition362TemplateUniposFull>
+
+    <Condition10101TemplateUnipos>Номер организации</Condition10101TemplateUnipos>
+    <Condition10101TemplateUniposFull>Номер организации. Используется в Alipay.</Condition10101TemplateUniposFull>
+    
+    <Condition10102TemplateUnipos>Номер продавца</Condition10102TemplateUnipos>
+    <Condition10102TemplateUniposFull>Номер продавца. Используется в Alipay.</Condition10102TemplateUniposFull>
+    
+    <Condition10103TemplateUnipos>Номер терминала</Condition10103TemplateUnipos>
+    <Condition10103TemplateUniposFull>Номер терминала. Используется в Alipay.</Condition10103TemplateUniposFull>
+    
+    <Condition10104TemplateUnipos>Тип операции</Condition10104TemplateUnipos>
+    <Condition10104TemplateUniposFull>Тип операции. Используется в Alipay.</Condition10104TemplateUniposFull>
+    
+    <Condition10105TemplateUnipos>Номер чека</Condition10105TemplateUnipos>
+    <Condition10105TemplateUniposFull>Номер чека. Используется в Alipay.</Condition10105TemplateUniposFull>
+    
+    <Condition10106TemplateUnipos>QR-код</Condition10106TemplateUnipos>
+    <Condition10106TemplateUniposFull>Печать QR-кода. Используется в Alipay.</Condition10106TemplateUniposFull>
+    
+    <Condition10107TemplateUnipos>Номер оригинального заказа</Condition10107TemplateUnipos>
+    <Condition10107TemplateUniposFull>Номер оригинального заказа. Используется в Alipay.</Condition10107TemplateUniposFull>
+    
+    <Condition10108TemplateUnipos>Номер заказа</Condition10108TemplateUnipos>
+    <Condition10108TemplateUniposFull>Номер заказа. Используется в Alipay.</Condition10108TemplateUniposFull>
+    
+    <Condition10109TemplateUnipos>Время терминала</Condition10109TemplateUnipos>
+    <Condition10109TemplateUniposFull>Время терминала. Используется в Alipay.</Condition10109TemplateUniposFull>
+    
+    <Condition10110TemplateUnipos>Название заказа</Condition10110TemplateUnipos>
+    <Condition10110TemplateUniposFull>Название заказа. Используется в Alipay.</Condition10110TemplateUniposFull>
+    
+    <Condition10111TemplateUnipos>Описание товара</Condition10111TemplateUnipos>
+    <Condition10111TemplateUniposFull>Описание товара. Используется в Alipay.</Condition10111TemplateUniposFull>
+    
+    <Condition10112TemplateUnipos>Способ проведения операции</Condition10112TemplateUnipos>
+    <Condition10112TemplateUniposFull>Способ проведения операции. Используется в Alipay.</Condition10112TemplateUniposFull>
+    
+    <Condition10113TemplateUnipos>Валюта операции</Condition10113TemplateUnipos>
+    <Condition10113TemplateUniposFull>Валюта операции. Используется в Alipay.</Condition10113TemplateUniposFull>
+    
+    <Condition10114TemplateUnipos>Сумма операции</Condition10114TemplateUnipos>
+    <Condition10114TemplateUniposFull>Сумма операции. Используется в Alipay.</Condition10114TemplateUniposFull>
+    
+    <Condition10115TemplateUnipos>Результат операции</Condition10115TemplateUnipos>
+    <Condition10115TemplateUniposFull>Результат операции. Используется в Alipay.</Condition10115TemplateUniposFull>
+    
+    <Condition10116TemplateUnipos>Расшифровка ответа</Condition10116TemplateUnipos>
+    <Condition10116TemplateUniposFull>Расшифровка ответа. Используется в Alipay.</Condition10116TemplateUniposFull>
+    
+    <Condition10117TemplateUnipos>Номер платежа</Condition10117TemplateUnipos>
+    <Condition10117TemplateUniposFull>Номер платежа. Используется в Alipay.</Condition10117TemplateUniposFull>
+    
+    <Condition10118TemplateUnipos>Время хоста</Condition10118TemplateUnipos>
+    <Condition10118TemplateUniposFull>Время хоста. Используется в Alipay.</Condition10118TemplateUniposFull>
+    
+    <Condition10119TemplateUnipos>Дата терминала</Condition10119TemplateUnipos>
+    <Condition10119TemplateUniposFull>Дата терминала. Используется в Alipay.</Condition10119TemplateUniposFull>
+    
+    <Condition10120TemplateUnipos>Дата хоста</Condition10120TemplateUnipos>
+    <Condition10120TemplateUniposFull>Дата хоста. Используется в Alipay.</Condition10120TemplateUniposFull>
+    
+    <Condition10121TemplateUnipos>Имя мерчанта</Condition10121TemplateUnipos>
+    <Condition10121TemplateUniposFull>Имя мерчанта. Используется в Alipay.</Condition10121TemplateUniposFull>
+    
+    <Condition10122TemplateUnipos>Адрес мерчанта</Condition10122TemplateUnipos>
+    <Condition10122TemplateUniposFull>Адрес мерчанта. Используется в Alipay.</Condition10122TemplateUniposFull>
+    
+    <Condition10150TemplateUnipos>Количество накопленных операций</Condition10150TemplateUnipos>
+    <Condition10150TemplateUniposFull>Количество накопленных операций. Используется в Alipay.</Condition10150TemplateUniposFull>
+    
+    <Condition10151TemplateUnipos>Сумма накопленных операций</Condition10151TemplateUnipos>
+    <Condition10151TemplateUniposFull>Сумма накопленных операций. Используется в Alipay.</Condition10151TemplateUniposFull>
+    
+    <Condition10152TemplateUnipos>Количество дебитовых операций</Condition10152TemplateUnipos>
+    <Condition10152TemplateUniposFull>Количество дебитовых операций. Используется в Alipay.</Condition10152TemplateUniposFull>
+    
+    <Condition10153TemplateUnipos>Количество кредитовых операций</Condition10153TemplateUnipos>
+    <Condition10153TemplateUniposFull>Количество кредитовых операций. Используется в Alipay.</Condition10153TemplateUniposFull>
+    
+    <Condition10154TemplateUnipos>Сумма дебитовых операций</Condition10154TemplateUnipos>
+    <Condition10154TemplateUniposFull>Сумма дебитовых операций. Используется в Alipay.</Condition10154TemplateUniposFull>
+    
+    <Condition10155TemplateUnipos>Сумма кредитовых операций</Condition10155TemplateUnipos>
+    <Condition10155TemplateUniposFull>Сумма кредитовых операций. Используется в Alipay.</Condition10155TemplateUniposFull>
+    
+    <Condition10156TemplateUnipos>Итоговая сумма Дебит - Кредит</Condition10156TemplateUnipos>
+    <Condition10156TemplateUniposFull>Итоговая сумма Дебит - Кредит. Используется в Alipay.</Condition10156TemplateUniposFull>	
+	
+  </Russian>
+  <English language="English">
+    <Condition1TemplateUnipos>Amount</Condition1TemplateUnipos>
+    <Condition1TemplateUniposFull>
+      Amount. A numeric value ranging from 0 to 999999999999.
+
+      Use сases:
+      1. Print amount: {[1]Al}
+      2. Print formatted amount: {[1]AlFrd#’(###’###’###’###’)P..}
+      3. Use in conditions:
+      - {E([1] > 100) || ([1] != 200)} - condition is satisfied if the amount is greater than 100 min. units or not equal to 200 min. units
+      - {C+[1]} - condition is satisfied if the amount present in the context of transaction
+      - {C-[1]} - condition is satisfied if the amount not present in the context of transaction
+    </Condition1TemplateUniposFull>
+
+    <Condition2TemplateUnipos>Additional amount</Condition2TemplateUnipos>
+    <Condition2TemplateUniposFull>
+      Additional amount (cashback). A numeric value ranging from 0 to 999999999999.
+      Variants of using look in the 'Amount'.
+    </Condition2TemplateUniposFull>
+
+    <Condition3TemplateUnipos>Original amount)</Condition3TemplateUnipos>
+    <Condition3TemplateUniposFull>
+      Original amount. A numeric value ranging from 0 to 999999999999.
+      Variants of using look in the 'Amount'.
+    </Condition3TemplateUniposFull>
+
+    <Condition4TemplateUnipos>PAN</Condition4TemplateUnipos>
+    <Condition4TemplateUniposFull>
+      Number of the customer's card. Numeric value with a length of string in the range of 11 to 19 characters.
+
+      Use сases:
+      1. Print PAN: {[4]Al}
+      2. Print formatted PAN: {[4]AmFrt# (**** **** **** **** ####)}
+    </Condition4TemplateUniposFull>
+
+    <Condition5TemplateUnipos>Expire date</Condition5TemplateUnipos>
+    <Condition5TemplateUniposFull>
+      Expire date of customer's card. The string length 4 characters. Format - YYММ.
+
+      Use сases:
+      1. Print formatted expire date:  {[5]ArFld#/(##/##)}
+    </Condition5TemplateUniposFull>
+
+    <Condition6TemplateUnipos>Cardholder's name</Condition6TemplateUnipos>
+    <Condition6TemplateUniposFull>Cardholder's name</Condition6TemplateUniposFull>
+
+    <Condition7TemplateUnipos>Card entry mode</Condition7TemplateUnipos>
+    <Condition7TemplateUniposFull>
+      Card entry mod. Numeric value:
+      0 - use cards with magnetic stripe
+      1 - use chip cards
+      2 - manually enter the card number
+
+      Use сases:
+      1. Print card entry mode (default): {[7]Al}
+      - 'S' - use cards with magnetic stripe
+      - 'C' - use chip card
+      - 'M' - manually enter the card number
+      2. Use in conditions:
+      - {E([7] == 1) || ([7] == 0)} - condition is satisfied if use card with magnetic stripe
+      - {E([7] != 1)} - condition is satisfied if use no chip card
+    </Condition7TemplateUniposFull>
+
+    <Condition8TemplateUnipos>Operation name</Condition8TemplateUnipos>
+    <Condition8TemplateUniposFull>Operation name</Condition8TemplateUniposFull>
+
+    <Condition9TemplateUnipos>Original operation name</Condition9TemplateUnipos>
+    <Condition9TemplateUniposFull>Original operation name</Condition9TemplateUniposFull>
+
+    <Condition10TemplateUnipos>Terminal time</Condition10TemplateUnipos>
+    <Condition10TemplateUniposFull>
+      Terminal time. Format - HHММSS.
+
+      Use сases:
+      1. Print terminal time (default): {[10]Al}. Formatting template is defined in the resource file.
+      2. Print formatted terminal time: {[10]Fld# ($T[H:M:S])}
+    </Condition10TemplateUniposFull>
+
+    <Condition11TemplateUnipos>Terminal ID</Condition11TemplateUnipos>
+    <Condition11TemplateUniposFull>Terminal ID. A string of alphanumeric characters.</Condition11TemplateUniposFull>
+
+    <Condition12TemplateUnipos>Merchant ID</Condition12TemplateUnipos>
+    <Condition12TemplateUniposFull>Merchant ID. A string of alphanumeric characters.</Condition12TemplateUniposFull>
+
+    <Condition13TemplateUnipos>Currency code</Condition13TemplateUnipos>
+    <Condition13TemplateUniposFull>Currency code. Three characters. Configured in the 'Currency' directory.</Condition13TemplateUniposFull>
+
+    <Condition14TemplateUnipos>Approval code</Condition14TemplateUnipos>
+    <Condition14TemplateUniposFull>Approval code</Condition14TemplateUniposFull>
+
+    <Condition15TemplateUnipos>Transaction number</Condition15TemplateUnipos>
+    <Condition15TemplateUniposFull>Transaction number. A numeric value ranging from 0 to 999999. Printing value is complemented by the left with zeros up to 6 characters.</Condition15TemplateUniposFull>
+
+    <Condition16TemplateUnipos>Fee</Condition16TemplateUnipos>
+    <Condition16TemplateUniposFull>
+      Fee. A numeric value ranging from 0 to 999999999999.
+      Variants of using look in the 'Amount'.
+    </Condition16TemplateUniposFull>
+
+    <Condition17TemplateUnipos>Auth code</Condition17TemplateUnipos>
+    <Condition17TemplateUniposFull>Auth code. A string of 6 characters.</Condition17TemplateUniposFull>
+
+    <Condition18TemplateUnipos>Batch ID</Condition18TemplateUnipos>
+    <Condition18TemplateUniposFull>Batch ID. A numeric value ranging from 0 to 999999. Printing value is complemented by the left with zeros up to 6 characters.</Condition18TemplateUniposFull>
+
+    <Condition19TemplateUnipos>Response code</Condition19TemplateUnipos>
+    <Condition19TemplateUniposFull>
+      Response code. 2 numeric characters ranging from 00 to 99.
+
+      Use сases:
+      1. Print response code: {[19]Al}
+      2. Use in conditions:
+      - {E([19] != "00")} - condition is satisfied if host response code not equal to '00'
+    </Condition19TemplateUniposFull>
+
+    <Condition20TemplateUnipos>Host date</Condition20TemplateUnipos>
+    <Condition20TemplateUniposFull>
+      Host date. Format - DDММYYYY.
+
+      Use сases:
+      1. Print host date (default): {[20]Al}. Formatting template is defined in the resource file.
+      2. Print formatted host date: {[20]Fld# ($D[D:M:Y])}
+    </Condition20TemplateUniposFull>
+
+    <Condition21TemplateUnipos>Host time</Condition21TemplateUnipos>
+    <Condition21TemplateUniposFull>
+      Host time. Format - HHММSS.
+      Variants of using look in the 'Terminal time'.
+    </Condition21TemplateUniposFull>
+
+    <Condition22TemplateUnipos>Receipt number</Condition22TemplateUnipos>
+    <Condition22TemplateUniposFull>Receipt number. A numeric value ranging from 0 to 9999. Printing value is complemented by the left with zeros up to 4 characters.</Condition22TemplateUniposFull>
+
+    <Condition23TemplateUnipos>Terminal date</Condition23TemplateUnipos>
+    <Condition23TemplateUniposFull>
+      Terminal date. Format - DDММYYYY.
+      Variants of using look in the 'Host date'.
+    </Condition23TemplateUniposFull>
+
+    <Condition24TemplateUnipos>Merchant</Condition24TemplateUnipos>
+    <Condition24TemplateUniposFull>Merchant</Condition24TemplateUniposFull>
+
+    <Condition25TemplateUnipos>Merchant's address</Condition25TemplateUnipos>
+    <Condition25TemplateUniposFull>Merchant's address</Condition25TemplateUniposFull>
+
+    <Condition26TemplateUnipos>PIN entry flag</Condition26TemplateUnipos>
+    <Condition26TemplateUniposFull>
+      PIN entry flag. Any value.
+
+      Use сases:
+      - {C+[26]} - condition is satisfied if PIN entry flag present in the context of transaction
+      - {C-[26]} - condition is satisfied if PIN entry flag not present in the context of transaction
+    </Condition26TemplateUniposFull>
+
+    <Condition27TemplateUnipos>Signature entry flag</Condition27TemplateUnipos>
+    <Condition27TemplateUniposFull>
+      Signature entry flag. Any value.
+      Variants of using look in the 'PIN entry flag'.
+    </Condition27TemplateUniposFull>
+
+    <Condition28TemplateUnipos>Operation success flag</Condition28TemplateUnipos>
+    <Condition28TemplateUniposFull>
+      Operation success flag. Any value.
+      Variants of using look in the 'PIN entry flag'.
+    </Condition28TemplateUniposFull>
+
+    <Condition29TemplateUnipos>Card's name</Condition29TemplateUnipos>
+    <Condition29TemplateUniposFull>Card's name</Condition29TemplateUniposFull>
+
+    <Condition30TemplateUnipos>Payment details</Condition30TemplateUnipos>
+    <Condition30TemplateUniposFull>Payment details</Condition30TemplateUniposFull>
+
+    <Condition31TemplateUnipos>Payment Account Number</Condition31TemplateUnipos>
+    <Condition31TemplateUniposFull>Payment Account Number</Condition31TemplateUniposFull>
+
+    <Condition32TemplateUnipos>Payment period</Condition32TemplateUnipos>
+    <Condition32TemplateUniposFull>Payment period</Condition32TemplateUniposFull>
+
+    <Condition33TemplateUnipos>Payment destination</Condition33TemplateUnipos>
+    <Condition33TemplateUniposFull>Payment destination</Condition33TemplateUniposFull>
+
+    <Condition34TemplateUnipos>Message from host</Condition34TemplateUnipos>
+    <Condition34TemplateUniposFull>Message from host</Condition34TemplateUniposFull>
+
+    <Condition36TemplateUnipos>Filename graphic logo</Condition36TemplateUnipos>
+    <Condition36TemplateUniposFull>Filename graphic logo</Condition36TemplateUniposFull>
+
+    <Condition38TemplateUnipos>Receipt copy flag</Condition38TemplateUnipos>
+    <Condition38TemplateUniposFull>
+      Receipt copy flag. Any value.
+      Variants of using look in the 'PIN entry flag'.
+    </Condition38TemplateUniposFull>
+
+    <Condition39TemplateUnipos>AID</Condition39TemplateUnipos>
+    <Condition39TemplateUniposFull>AID</Condition39TemplateUniposFull>
+
+    <Condition40TemplateUnipos>The name of the element of "Billing charges"</Condition40TemplateUnipos>
+    <Condition40TemplateUniposFull>The name of the element of "Billing charges"</Condition40TemplateUniposFull>
+
+    <Condition41TemplateUnipos>The amount of discounts "Billing charges"</Condition41TemplateUnipos>
+    <Condition41TemplateUniposFull>
+      The amount of discounts "Billing charges". A numeric value ranging from 0 to 999999999999.
+      Variants of using look in the 'Amount'.
+    </Condition41TemplateUniposFull>
+
+    <Condition44TemplateUnipos>TVR</Condition44TemplateUnipos>
+    <Condition44TemplateUniposFull>
+      TVR - Terminal Verification Results.
+    </Condition44TemplateUniposFull>
+
+    <Condition45TemplateUnipos>TSI</Condition45TemplateUnipos>
+    <Condition45TemplateUniposFull>
+      TSI - Transaction Status Information.
+    </Condition45TemplateUniposFull>
+
+    <Condition46TemplateUnipos>CID</Condition46TemplateUnipos>
+    <Condition46TemplateUniposFull>
+      CID - Cryptogram Information Data.
+    </Condition46TemplateUniposFull>
+
+    <Condition51TemplateUnipos>Operation ID</Condition51TemplateUnipos>
+    <Condition51TemplateUniposFull>
+      Operation ID.
+
+      Valid values are:
+      0 - Unknown type
+      1 - Sale (Purchase)
+      2 - Refund
+      3 - Void (Reversal)
+      4 - Authorization
+      5 - Authorization complete
+      6 - Credit (Deposit)
+      7 - Cash
+      9 - Load keys
+      10 - Check connection
+      11 - Reconciliation
+      14 - Balance Inquiry
+      15 - Ministatement
+      18 - Pin change
+      20 - Loyalty
+      22 - Purchase with cashback
+      23 - Application unblock
+      24 - PIN unblock
+      25 - Payment
+      26 - Billing payment
+      27 - CreditVoucher
+      29 - Billing payment by cash
+      30 - Stoplist download
+      31 - Pin enrolment
+
+      Use сases:
+      1. Use in conditions:
+      - {E([51] == 1) || ([51] == 2)} - condition is satisfied if type operation is 'Sale' or 'Refund'
+      - {E([51] != 1)} - condition is satisfied if type operation differs from the 'Sale'
+    </Condition51TemplateUniposFull>
+
+    <Condition52TemplateUnipos>Card application name</Condition52TemplateUnipos>
+    <Condition52TemplateUniposFull>Card application name</Condition52TemplateUniposFull>
+
+    <Condition53TemplateUnipos>Original amount(without fee)</Condition53TemplateUnipos>
+    <Condition53TemplateUniposFull>
+      Original amount(without fee). A numeric value ranging from 0 to 999999999999.
+      Variants of using look in the 'Amount'.
+    </Condition53TemplateUniposFull>
+
+    <Condition54TemplateUnipos>Full name of the currency</Condition54TemplateUnipos>
+    <Condition54TemplateUniposFull>Full name of the currency</Condition54TemplateUniposFull>
+
+    <Condition56TemplateUnipos>Interrupted Autoreversals Number</Condition56TemplateUnipos>
+    <Condition56TemplateUniposFull>Interrupted Autoreversals Number</Condition56TemplateUniposFull>
+
+    <Condition66TemplateUnipos>Totals mismatch flag</Condition66TemplateUnipos>
+    <Condition66TemplateUniposFull>Totals mismatch flag</Condition66TemplateUniposFull>
+
+	<Condition68TemplateUnipos>CashBack Amount</Condition68TemplateUnipos>
+    <Condition68TemplateUniposFull>CashBack Amount</Condition68TemplateUniposFull>
+
+    <Condition69TemplateUnipos>Fee name</Condition69TemplateUnipos>
+    <Condition69TemplateUniposFull>Name of fee each element which is received from host in field 46</Condition69TemplateUniposFull>
+
+    <Condition70TemplateUnipos>Fee amount</Condition70TemplateUnipos>
+    <Condition70TemplateUniposFull>Amount of fee each element which is received from host in field 46</Condition70TemplateUniposFull>
+
+    <Condition71TemplateUnipos>Wallet name</Condition71TemplateUnipos>
+    <Condition71TemplateUniposFull>Wallet name as defined in parameter "Name for display"</Condition71TemplateUniposFull>
+
+    <Condition72TemplateUnipos>Additional data for print on receipt</Condition72TemplateUnipos>
+    <Condition72TemplateUniposFull>Additional data for print on receipt received from host in fiedl 31</Condition72TemplateUniposFull>
+
+    <Condition73TemplateUnipos>Available wallet balance</Condition73TemplateUnipos>
+    <Condition73TemplateUniposFull>Available wallet balance received from host responce</Condition73TemplateUniposFull>
+
+    <Condition74TemplateUnipos>Balance received in host field 54. Account type.</Condition74TemplateUnipos>
+    <Condition74TemplateUniposFull>Account type of current balance element received in field 54 from host.</Condition74TemplateUniposFull>
+
+    <Condition75TemplateUnipos>Balance received in host field 54. Currency.</Condition75TemplateUnipos>
+    <Condition75TemplateUniposFull>Currency of current balance element received in field 54 from host.</Condition75TemplateUniposFull>
+
+    <Condition76TemplateUnipos>Balance received in host field 54. Amount.</Condition76TemplateUnipos>
+    <Condition76TemplateUniposFull>Available amount of current balance element received in field 54 from host.</Condition76TemplateUniposFull>
+
+    <Condition77TemplateUnipos>Balance received in host field 54. Amount type.</Condition77TemplateUnipos>
+    <Condition77TemplateUniposFull>Amount type of current balance element received in field 54 from host.</Condition77TemplateUniposFull>
+
+    <Condition78TemplateUnipos>Balance received in host field 54. Number of elements.</Condition78TemplateUnipos>
+    <Condition78TemplateUniposFull>Number of balance elements received in field 54 from host.</Condition78TemplateUniposFull>
+
+    <Condition79TemplateUnipos>Transaction date of current mini statement element.</Condition79TemplateUnipos>
+    <Condition79TemplateUniposFull>Transaction date of current mini statement element received from host in tag 021 field 48.</Condition79TemplateUniposFull>
+
+    <Condition80TemplateUnipos>Transaction time of current mini statement element.</Condition80TemplateUnipos>
+    <Condition80TemplateUniposFull>Transaction time of current mini statement element received from host in tag 021 field 48.</Condition80TemplateUniposFull>
+
+    <Condition81TemplateUnipos>Transaction type of current mini statement element.</Condition81TemplateUnipos>
+    <Condition81TemplateUniposFull>Transaction type of current mini statement element received from host in tag 021 field 48.</Condition81TemplateUniposFull>
+
+    <Condition82TemplateUnipos>Transaction amount of current mini statement element.</Condition82TemplateUnipos>
+    <Condition82TemplateUniposFull>Transaction amount of current mini statement element received from host in tag 021 field 48.</Condition82TemplateUniposFull>
+
+    <Condition83TemplateUnipos>Transaction currency of current mini statement element.</Condition83TemplateUnipos>
+    <Condition83TemplateUniposFull>Transaction currency of current mini statement element received from host in tag 021 field 48.</Condition83TemplateUniposFull>
+
+    <Condition84TemplateUnipos>Terminal ID of current mini statement element.</Condition84TemplateUnipos>
+    <Condition84TemplateUniposFull>Terminal ID of current mini statement element received from host in tag 021 field 48.</Condition84TemplateUniposFull>
+
+    <Condition85TemplateUnipos>Terminal name and address of current mini statement element.</Condition85TemplateUnipos>
+    <Condition85TemplateUniposFull>Terminal name and address of current mini statement element received from host in tag 021 field 48.</Condition85TemplateUniposFull>
+
+    <Condition86TemplateUnipos>Authorisation code of current mini statement element.</Condition86TemplateUnipos>
+    <Condition86TemplateUniposFull>Authorisation code of current mini statement element received from host in tag 021 field 48.</Condition86TemplateUniposFull>
+
+    <Condition87TemplateUnipos>Sum of host commission's amount</Condition87TemplateUnipos>
+    <Condition87TemplateUniposFull>Sum of host commission's amount.</Condition87TemplateUniposFull>
+    
+    <Condition88TemplateUnipos>Sum of cancel amount with all commission</Condition88TemplateUnipos>
+    <Condition88TemplateUniposFull>Sum of cancel amount with all commission.</Condition88TemplateUniposFull>
+
+    <Condition89TemplateUnipos>Payment parameter name</Condition89TemplateUnipos>
+    <Condition89TemplateUniposFull>Payment parameter name</Condition89TemplateUniposFull>
+
+    <Condition90TemplateUnipos>Payment parameter value</Condition90TemplateUnipos>
+    <Condition90TemplateUniposFull>Payment parameter value</Condition90TemplateUniposFull>
+
+    <Condition91TemplateUnipos>Customer name</Condition91TemplateUnipos>
+    <Condition91TemplateUniposFull>Customer name (may be received from host during Payment transaction)</Condition91TemplateUniposFull>
+
+    <Condition92TemplateUnipos>Account name</Condition92TemplateUnipos>
+    <Condition92TemplateUniposFull>Account name</Condition92TemplateUniposFull>
+
+    <Condition100TemplateUnipos>Bonus amount</Condition100TemplateUnipos>
+    <Condition100TemplateUniposFull>Bonus amount</Condition100TemplateUniposFull>	
+
+	<Condition101TemplateUnipos>Bonus Phase</Condition101TemplateUnipos>
+    <Condition101TemplateUniposFull>Bonus Phase in Sale with Bonus</Condition101TemplateUniposFull>
+	
+	<Condition102TemplateUnipos>ID original operaion</Condition102TemplateUnipos>
+    <Condition102TemplateUniposFull>ID original operatin in cancel operation</Condition102TemplateUniposFull>
+	
+	<Condition103TemplateUnipos>Amount of first operation of "Sale+Bonus"</Condition103TemplateUnipos>
+    <Condition103TemplateUniposFull>Amount of first operation of "Sale+Bonus"</Condition103TemplateUniposFull>	
+	
+	<Condition104TemplateUnipos>Amount of first and second operation of "Sale+Bonus"</Condition104TemplateUnipos>
+    <Condition104TemplateUniposFull>Amount of first and second operation of "Sale+Bonus"</Condition104TemplateUniposFull>	
+	
+    <Condition109TemplateUnipos>Receipt number of canceled operation</Condition109TemplateUnipos>
+    <Condition109TemplateUniposFull>Receipt number of canceled operation. A numeric value ranging from 0 to 9999. Printing value is complemented by the left with zeros up to 4 characters.</Condition109TemplateUniposFull>
+
+	<Condition110TemplateUnipos>A sign of successful completion of the assignment</Condition110TemplateUnipos>
+    <Condition110TemplateUniposFull>A sign of successful completion of the assignment</Condition110TemplateUniposFull>
+	
+	<Condition111TemplateUnipos>Name of company</Condition111TemplateUnipos>
+    <Condition111TemplateUniposFull>Name of company. Comes from the host in 48 field. Tag 090</Condition111TemplateUniposFull>
+	
+	<Condition112TemplateUnipos>Installation address</Condition112TemplateUnipos>
+    <Condition112TemplateUniposFull>Installation address. Comes from the host in 48 field. Tag 091</Condition112TemplateUniposFull>
+	
+	<Condition113TemplateUnipos>Phone number</Condition113TemplateUnipos>
+    <Condition113TemplateUniposFull>Phone number. Comes from the host in 48 field. Tag 092</Condition113TemplateUniposFull>
+	
+	<Condition114TemplateUnipos>Reserve 1</Condition114TemplateUnipos>
+    <Condition114TemplateUniposFull>Reserve 1. Comes from the host in 48 field. Tag 093</Condition114TemplateUniposFull>
+	
+	<Condition115TemplateUnipos>Reserve 2</Condition115TemplateUnipos>
+    <Condition115TemplateUniposFull>Reserve 2. Comes from the host in 48 field. Tag 094</Condition115TemplateUniposFull>
+	
+	<Condition116TemplateUnipos>Reserve 3</Condition116TemplateUnipos>
+    <Condition116TemplateUniposFull>Reserve 3. Comes from the host in 48 field. Tag 095</Condition116TemplateUniposFull>
+	
+    <Condition117TemplateUnipos>Signature entered on terminal touch screen</Condition117TemplateUnipos>
+    <Condition117TemplateUniposFull>Signature entered on terminal touch screen</Condition117TemplateUniposFull>	
+	
+	<Condition120TemplateUnipos>DF74 KVR</Condition120TemplateUnipos>
+    <Condition120TemplateUniposFull>MIR CTLS. DF74 KVR (Kernel Verification Results)</Condition120TemplateUniposFull>
+	
+	<Condition121TemplateUnipos>9F70 CDA Result</Condition121TemplateUnipos>
+    <Condition121TemplateUniposFull>MIR CTLS. 9F70 CDA Result.</Condition121TemplateUniposFull>
+
+    <Condition125TemplateUnipos>Total amount of transactions from the POS-terminal</Condition125TemplateUnipos>
+    <Condition125TemplateUniposFull>Total amount of transactions from the POS-terminal. The item is printed on the check if the totals do not match.</Condition125TemplateUniposFull>
+
+    <Condition126TemplateUnipos>Total amount of transactions from the host</Condition126TemplateUnipos>
+    <Condition126TemplateUniposFull>Total amount of transactions from the host. The item is printed on the check if the totals do not match.</Condition126TemplateUniposFull>
+	
+    <Condition200TemplateUnipos>Init of "Billings charges" elements</Condition200TemplateUnipos>
+    <Condition200TemplateUniposFull>Init of "Billings charges" elements. Element is used for looping through the array 'Commission / Discount "applied to the operation.</Condition200TemplateUniposFull>
+
+    <Condition201TemplateUnipos>Switch for "Billing charges" elements</Condition201TemplateUnipos>
+    <Condition201TemplateUniposFull>Switch for "Billing charges" elements. Element is used for looping through the array 'Commission / Discount "applied to the operation.</Condition201TemplateUniposFull>
+
+    <Condition202TemplateUnipos>Count of "Billing charges" elements</Condition202TemplateUnipos>
+    <Condition202TemplateUniposFull>Count of "Billing charges" elements. Element is used for looping through the array 'Commission / Discount "applied to the operation.</Condition202TemplateUniposFull>
+
+    <Condition203TemplateUnipos>Init balance print loop</Condition203TemplateUnipos>
+    <Condition203TemplateUniposFull>Init balance print loop. Element is used for looping through the array of balance data downloaded from the host.</Condition203TemplateUniposFull>
+
+    <Condition204TemplateUnipos>Switch to next balance element</Condition204TemplateUnipos>
+    <Condition204TemplateUniposFull>Switch to next balance element. Element is used for looping through the array of balance data downloaded from the host.</Condition204TemplateUniposFull>
+
+    <Condition205TemplateUnipos>Number of balance elements</Condition205TemplateUnipos>
+    <Condition205TemplateUniposFull>Number of balance elements. Element is used for looping through the array of balance data downloaded from the host.</Condition205TemplateUniposFull>
+
+    <Condition209TemplateUnipos>Init host fee print loop</Condition209TemplateUnipos>
+    <Condition209TemplateUniposFull>Init host fee print loop. Element is used for looping through the array of host fee data.</Condition209TemplateUniposFull>
+
+    <Condition210TemplateUnipos>Switch to next host fee element</Condition210TemplateUnipos>
+    <Condition210TemplateUniposFull>Switch to next host fee element. Element is used for looping through the array of host fee data.</Condition210TemplateUniposFull>
+
+    <Condition211TemplateUnipos>Number of host fee elements.</Condition211TemplateUnipos>
+    <Condition211TemplateUniposFull>Number of host fee elements. Element is used for looping through the array of host fee data.</Condition211TemplateUniposFull>
+
+    <Condition212TemplateUnipos>Init balance (field 54) print loop</Condition212TemplateUnipos>
+    <Condition212TemplateUniposFull>Init balance (field 54) print loop. Element is used for looping through the array of balance data downloaded from the host.</Condition212TemplateUniposFull>
+
+    <Condition213TemplateUnipos>Switch to next balance (field 54) element</Condition213TemplateUnipos>
+    <Condition213TemplateUniposFull>Switch to next balance (field 54) element. Element is used for looping through the array of balance data downloaded from the host.</Condition213TemplateUniposFull>
+
+    <Condition214TemplateUnipos>Number of balance (field 54) elements</Condition214TemplateUnipos>
+    <Condition214TemplateUniposFull>Number of balance (field 54) elements. Element is used for looping through the array of balance data downloaded from the host.</Condition214TemplateUniposFull>
+
+    <Condition215TemplateUnipos>Init of ministatement elements</Condition215TemplateUnipos>
+    <Condition215TemplateUniposFull>Init of ministatement elements. Element is used for looping through the array of ministatement data downloaded from the host.</Condition215TemplateUniposFull>
+
+    <Condition216TemplateUnipos>Switch for ministatement elements</Condition216TemplateUnipos>
+    <Condition216TemplateUniposFull>Switch for ministatement elements. Element is used for looping through the array of ministatement data downloaded from the host.</Condition216TemplateUniposFull>
+
+    <Condition217TemplateUnipos>Count of ministatement elements</Condition217TemplateUnipos>
+    <Condition217TemplateUniposFull>Count of ministatement elements. Element is used for looping through the array of ministatement data downloaded from the host.</Condition217TemplateUniposFull>
+
+    <Condition218TemplateUnipos>Init of payment parameters elements</Condition218TemplateUnipos>
+    <Condition218TemplateUniposFull>Init of payment parameters elements. Element is used for looping through the array of payment parameters data downloaded from the host.</Condition218TemplateUniposFull>
+
+    <Condition219TemplateUnipos>Switch for payment parameters elements</Condition219TemplateUnipos>
+    <Condition219TemplateUniposFull>Switch for payment parameters elements.  Element is used for looping through the array of payment parameters data.</Condition219TemplateUniposFull>
+
+    <Condition220TemplateUnipos>Count of payment parameters elements</Condition220TemplateUnipos>
+    <Condition220TemplateUniposFull>Count of payment parameters elements.  Element is used for looping through the array of payment parameters data.</Condition220TemplateUniposFull>
+
+    <Condition300TemplateUnipos>Number of accumulated operations</Condition300TemplateUnipos>
+    <Condition300TemplateUniposFull>Number of accumulated operations. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition300TemplateUniposFull>
+
+    <Condition301TemplateUnipos>Accumulated amount of transactions</Condition301TemplateUnipos>
+    <Condition301TemplateUniposFull>Accumulated amount of transactions. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition301TemplateUniposFull>
+
+    <Condition302TemplateUnipos>Accumulated amount of transactions (Original amounts)</Condition302TemplateUnipos>
+    <Condition302TemplateUniposFull>Accumulated amount of transactions. (Original amounts). A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition302TemplateUniposFull>
+    
+    <Condition303TemplateUnipos>Accumulated amount of host comission</Condition303TemplateUnipos>
+    <Condition303TemplateUniposFull>Accumulated amount of host comission. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition303TemplateUniposFull>
+
+    <Condition304TemplateUnipos>Accumulated amount of uncanceled debit comission</Condition304TemplateUnipos>
+    <Condition304TemplateUniposFull>Accumulated amount of uncanceled debit comission. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition304TemplateUniposFull>
+
+    <Condition305TemplateUnipos>Accumulated amount of uncanceled credit comission</Condition305TemplateUnipos>
+    <Condition305TemplateUniposFull>Accumulated amount of uncanceled credit comission. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition305TemplateUniposFull>
+
+    <Condition306TemplateUnipos>Comissions and discount summ for operation</Condition306TemplateUnipos>
+    <Condition306TemplateUniposFull>Comissions and discount summ for operation. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition306TemplateUniposFull>
+
+	    <Condition307TemplateUnipos>Amount without comissions and discount summ for operation</Condition307TemplateUnipos>
+    <Condition307TemplateUniposFull>Amount without comissions and discount summ for operation. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition307TemplateUniposFull>
+	
+    <Condition310TemplateUnipos>Accumulated amount of debit operations</Condition310TemplateUnipos>
+    <Condition310TemplateUniposFull>Accumulated amount of debit operations.  A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition310TemplateUniposFull>
+
+    <Condition311TemplateUnipos>Accumulated amount of credit operations</Condition311TemplateUnipos>
+    <Condition311TemplateUniposFull>Accumulated amount of credit operations.  A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition311TemplateUniposFull>
+
+    <Condition312TemplateUnipos>Accumulated amount of uncanceled debit operations</Condition312TemplateUnipos>
+    <Condition312TemplateUniposFull>Accumulated amount of uncanceled debit operations.  A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition312TemplateUniposFull>
+
+    <Condition313TemplateUnipos>Accumulated amount of uncanceled credit operations</Condition313TemplateUnipos>
+    <Condition313TemplateUniposFull>Accumulated amount of uncanceled credit operations.  A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition313TemplateUniposFull>
+
+    <Condition320TemplateUnipos>Count of payment parameters elements without cancels</Condition320TemplateUnipos>
+    <Condition320TemplateUniposFull>Count of payment parameters elements.  Element is used for looping through the array of payment parameters data.</Condition320TemplateUniposFull>
+    
+    <Condition321TemplateUnipos>Accumulated amount of all transactions</Condition321TemplateUnipos>
+    <Condition321TemplateUniposFull>Accumulated amount of all transactions. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition321TemplateUniposFull>
+
+    <Condition322TemplateUnipos>Accumulated amount of all transactions (Original amounts)</Condition322TemplateUnipos>
+    <Condition322TemplateUniposFull>Accumulated amount of all transactions. (Original amounts). A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition322TemplateUniposFull>
+
+    <Condition323TemplateUnipos>Accumulated amount of host comission</Condition323TemplateUnipos>
+    <Condition323TemplateUniposFull>Accumulated amount of host comission. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition323TemplateUniposFull>    
+
+    <Condition324TemplateUnipos>Accumulated amount of debit operations without fees</Condition324TemplateUnipos>
+    <Condition324TemplateUniposFull>Accumulated amount of debit operations without fees. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition324TemplateUniposFull>
+
+    <Condition325TemplateUnipos>Accumulated amount of credit operations without fees</Condition325TemplateUnipos>
+    <Condition325TemplateUniposFull>Accumulated amount of credit operations without fees. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition325TemplateUniposFull>
+
+    <Condition326TemplateUnipos>Number of original and bonus operations</Condition326TemplateUnipos>
+    <Condition326TemplateUniposFull>Number of original and bonus operations. . A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition326TemplateUniposFull>
+
+    <Condition327TemplateUnipos>Accumulated amount of original and bonus operations</Condition327TemplateUnipos>
+    <Condition327TemplateUniposFull>Accumulated amount of original and bonus operations. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition327TemplateUniposFull>
+	
+	<Condition328TemplateUnipos>First check number</Condition328TemplateUnipos>
+    <Condition328TemplateUniposFull>First check number.</Condition328TemplateUniposFull>
+	
+	<Condition329TemplateUnipos>Last check number</Condition329TemplateUnipos>
+    <Condition329TemplateUniposFull>Last check number.</Condition329TemplateUniposFull>
+	
+	<Condition330TemplateUnipos>First operation date</Condition330TemplateUnipos>
+    <Condition330TemplateUniposFull>First operation date.</Condition330TemplateUniposFull>
+	
+	<Condition331TemplateUnipos>Last operation date</Condition331TemplateUnipos>
+    <Condition331TemplateUniposFull>Last operation date.</Condition331TemplateUniposFull>
+	
+	<Condition332TemplateUnipos>First operation Time</Condition332TemplateUnipos>
+    <Condition332TemplateUniposFull>First operation Time.</Condition332TemplateUniposFull>
+	
+	<Condition333TemplateUnipos>Last operation Time</Condition333TemplateUnipos>
+    <Condition333TemplateUniposFull>Last operation Time.</Condition333TemplateUniposFull>
+	
+	<Condition334TemplateUnipos>Offline approved</Condition334TemplateUnipos>
+    <Condition334TemplateUniposFull>Offline approved.</Condition334TemplateUniposFull>
+		
+	<Condition335TemplateUnipos>Accumulated amount of uncanceled debit operations without fees</Condition335TemplateUnipos>
+    <Condition335TemplateUniposFull>Accumulated amount of uncanceled debit operations without fees. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition335TemplateUniposFull>
+	
+	<Condition336TemplateUnipos>Accumulated amount of uncanceled debit operations without fees and discounts</Condition336TemplateUnipos>
+    <Condition336TemplateUniposFull>Accumulated amount of uncanceled debit operations without fees and discounts. A numeric value ranging from 0 to 999999999999. Element is used to print reports.</Condition336TemplateUniposFull>
+	
+	<Condition337TemplateUnipos>Payment name</Condition337TemplateUnipos>
+    <Condition337TemplateUniposFull>Payment name. Element is used to print reports.</Condition337TemplateUniposFull>
+	
+	<Condition338TemplateUnipos>Payments count</Condition338TemplateUnipos>
+    <Condition338TemplateUniposFull>Payments count. Element is used to print reports.</Condition338TemplateUniposFull>	
+	
+	<Condition339TemplateUnipos>Accumulated amount of payment operations</Condition339TemplateUnipos>
+    <Condition339TemplateUniposFull>Accumulated amount of payment operations. Element is used to print reports.</Condition339TemplateUniposFull>	
+	
+	<Condition340TemplateUnipos>Number of accumulated operations excluding payment operations</Condition340TemplateUnipos>
+    <Condition340TemplateUniposFull>Number of accumulated operations excluding payment operations. Element is used to print reports.</Condition340TemplateUniposFull>
+	
+	<Condition341TemplateUnipos>Accumulated amount of transactions excluding payment operations</Condition341TemplateUnipos>
+    <Condition341TemplateUniposFull>Accumulated amount of transactions excluding payment operations. Element is used to print reports.</Condition341TemplateUniposFull>
+	
+	<Condition342TemplateUnipos>The card number of the recipient</Condition342TemplateUnipos>
+    <Condition342TemplateUniposFull>The card number of the recipient.</Condition342TemplateUniposFull>
+	
+	<Condition343TemplateUnipos>Amount of customer debt</Condition343TemplateUnipos>
+    <Condition343TemplateUniposFull>Amount of customer debt.</Condition343TemplateUniposFull>
+
+	<Condition344TemplateUnipos>Accumulated amount of CashBack</Condition344TemplateUnipos>
+    <Condition344TemplateUniposFull>Accumulated amount of CashBack. Element is used to print reports.</Condition344TemplateUniposFull>
+
+	<Condition345TemplateUnipos>Product name</Condition345TemplateUnipos>
+    <Condition345TemplateUniposFull>Product name. Element is used to print reports.</Condition345TemplateUniposFull>
+	
+	<Condition346TemplateUnipos>Product price</Condition346TemplateUnipos>
+    <Condition346TemplateUniposFull>Product price. Element is used to print reports.</Condition346TemplateUniposFull>
+	
+	<Condition347TemplateUnipos>Products count</Condition347TemplateUnipos>
+    <Condition347TemplateUniposFull>Products count. Element is used to print reports.</Condition347TemplateUniposFull>
+	
+	<Condition348TemplateUnipos>Product department name</Condition348TemplateUnipos>
+    <Condition348TemplateUniposFull>Product department name. Element is used to print reports.</Condition348TemplateUniposFull>
+
+	<Condition349TemplateUnipos>Unreversal cash payments count</Condition349TemplateUnipos>
+    <Condition349TemplateUniposFull>Unreversal cash payments count.</Condition349TemplateUniposFull>
+	
+	<Condition350TemplateUnipos>Unreversal cash payments count amount</Condition350TemplateUnipos>
+    <Condition350TemplateUniposFull>Unreversal cash payments count amount.</Condition350TemplateUniposFull>
+
+	<Condition351TemplateUnipos>Indication of cash payment</Condition351TemplateUnipos>
+    <Condition351TemplateUniposFull>Indication of cash payment.</Condition351TemplateUniposFull>
+	
+	<Condition352TemplateUnipos>Total cash payments count</Condition352TemplateUnipos>
+    <Condition352TemplateUniposFull>Total cash payments count (with cash) (with canceled).</Condition352TemplateUniposFull>
+	
+	<Condition353TemplateUnipos>Toatl cash payments amount</Condition353TemplateUnipos>
+    <Condition353TemplateUniposFull>Total cash payments amount (with cash) (with canceled).</Condition353TemplateUniposFull>
+	
+	<Condition354TemplateUnipos>Interactive discount</Condition354TemplateUnipos>
+    <Condition354TemplateUniposFull>Additional discount from KKM.</Condition354TemplateUniposFull>
+	
+	<Condition355TemplateUnipos>Canceled payments count</Condition355TemplateUnipos>
+    <Condition355TemplateUniposFull>Canceled payments count.</Condition355TemplateUniposFull>
+	
+	<Condition356TemplateUnipos>Indication of canceled</Condition356TemplateUnipos>
+    <Condition356TemplateUniposFull>Indication of canceled.</Condition356TemplateUniposFull>
+
+	<Condition357TemplateUnipos>Operation name</Condition357TemplateUnipos>
+    <Condition357TemplateUniposFull>Operation name.</Condition357TemplateUniposFull>
+
+	<Condition358TemplateUnipos>Total payment count</Condition358TemplateUnipos>
+    <Condition358TemplateUniposFull>Total payment count (with cash) (without canceled).</Condition358TemplateUniposFull>
+
+	<Condition359TemplateUnipos>Total canceled payment amount</Condition359TemplateUnipos>
+    <Condition359TemplateUniposFull>Total canceled payment amount.</Condition359TemplateUniposFull>
+
+	<Condition360TemplateUnipos>Total department amount</Condition360TemplateUnipos>
+    <Condition360TemplateUniposFull>Total department amount.</Condition360TemplateUniposFull>
+
+	<Condition361TemplateUnipos>Departments caount</Condition361TemplateUnipos>
+    <Condition361TemplateUniposFull>Departments caount.</Condition361TemplateUniposFull>
+	
+	<Condition362TemplateUnipos>Count of operation with cashback</Condition362TemplateUnipos>
+    <Condition362TemplateUniposFull>Count of operation with cashback.</Condition362TemplateUniposFull>
+
+    <Condition10101TemplateUnipos>Organization number</Condition10101TemplateUnipos>
+    <Condition10101TemplateUniposFull>Organization number. Use in Alipay.</Condition10101TemplateUniposFull>
+    
+    <Condition10102TemplateUnipos>Merchant number</Condition10102TemplateUnipos>
+    <Condition10102TemplateUniposFull>Merchant number. Use in Alipay.</Condition10102TemplateUniposFull>
+    
+    <Condition10103TemplateUnipos>Terminal number</Condition10103TemplateUnipos>
+    <Condition10103TemplateUniposFull>Terminal number. Use in Alipay.</Condition10103TemplateUniposFull>
+    
+    <Condition10104TemplateUnipos>Operation type</Condition10104TemplateUnipos>
+    <Condition10104TemplateUniposFull>Operation type. Use in Alipay.</Condition10104TemplateUniposFull>
+    
+    <Condition10105TemplateUnipos>Voucher number</Condition10105TemplateUnipos>
+    <Condition10105TemplateUniposFull>Voucher number. Use in Alipay.</Condition10105TemplateUniposFull>
+    
+    <Condition10106TemplateUnipos>QR-code</Condition10106TemplateUnipos>
+    <Condition10106TemplateUniposFull>Print QR-code. Use in Alipay.</Condition10106TemplateUniposFull>
+    
+    <Condition10107TemplateUnipos>Original transaction order number</Condition10107TemplateUnipos>
+    <Condition10107TemplateUniposFull>Original transaction order number. Use in Alipay.</Condition10107TemplateUniposFull>
+    
+    <Condition10108TemplateUnipos>Transaction order number</Condition10108TemplateUnipos>
+    <Condition10108TemplateUniposFull>Transaction order number. Use in Alipay.</Condition10108TemplateUniposFull>
+    
+    <Condition10109TemplateUnipos>Order generation time</Condition10109TemplateUnipos>
+    <Condition10109TemplateUniposFull>Order generation time. Use in Alipay.</Condition10109TemplateUniposFull>
+    
+    <Condition10110TemplateUnipos>Order title</Condition10110TemplateUnipos>
+    <Condition10110TemplateUniposFull>Order title. Use in Alipay.</Condition10110TemplateUniposFull>
+    
+    <Condition10111TemplateUnipos>Commodity description</Condition10111TemplateUnipos>
+    <Condition10111TemplateUniposFull>Commodity description. Use in Alipay.</Condition10111TemplateUniposFull>
+    
+    <Condition10112TemplateUnipos>Payment type</Condition10112TemplateUnipos>
+    <Condition10112TemplateUniposFull>Payment type. Use in Alipay.</Condition10112TemplateUniposFull>
+    
+    <Condition10113TemplateUnipos>Currency</Condition10113TemplateUnipos>
+    <Condition10113TemplateUniposFull>Currency. Use in Alipay.</Condition10113TemplateUniposFull>
+    
+    <Condition10114TemplateUnipos>Amount</Condition10114TemplateUnipos>
+    <Condition10114TemplateUniposFull>Amount. Use in Alipay.</Condition10114TemplateUniposFull>
+    
+    <Condition10115TemplateUnipos>Response result</Condition10115TemplateUnipos>
+    <Condition10115TemplateUniposFull>Результат result. Use in Alipay.</Condition10115TemplateUniposFull>
+    
+    <Condition10116TemplateUnipos>Response description</Condition10116TemplateUnipos>
+    <Condition10116TemplateUniposFull>Response description. Use in Alipay.</Condition10116TemplateUniposFull>
+    
+    <Condition10117TemplateUnipos>Payment order number</Condition10117TemplateUnipos>
+    <Condition10117TemplateUniposFull>Payment order number. Use in Alipay.</Condition10117TemplateUniposFull>
+    
+    <Condition10118TemplateUnipos>Transaction time</Condition10118TemplateUnipos>
+    <Condition10118TemplateUniposFull>Transaction time. Use in Alipay.</Condition10118TemplateUniposFull>
+    
+    <Condition10119TemplateUnipos>Order generation date</Condition10119TemplateUnipos>
+    <Condition10119TemplateUniposFull>Order generation date. Use in Alipay.</Condition10119TemplateUniposFull>
+    
+    <Condition10120TemplateUnipos>Merchant name</Condition10120TemplateUnipos>
+    <Condition10120TemplateUniposFull>Merchant name. Use in Alipay.</Condition10120TemplateUniposFull>
+    
+    <Condition10121TemplateUnipos>Merchant address</Condition10121TemplateUnipos>
+    <Condition10121TemplateUniposFull>Merchant address. Use in Alipay.</Condition10121TemplateUniposFull>
+    
+    <Condition10150TemplateUnipos>Number of accumulated operations</Condition10150TemplateUnipos>
+    <Condition10150TemplateUniposFull>Number of accumulated operations. Use in Alipay.</Condition10150TemplateUniposFull>
+    
+    <Condition10151TemplateUnipos>Amount of accumulated transactions</Condition10151TemplateUnipos>
+    <Condition10151TemplateUniposFull>Amount of accumulated transactions. Use in Alipay.</Condition10151TemplateUniposFull>
+    
+    <Condition10152TemplateUnipos>Number of debit operations</Condition10152TemplateUnipos>
+    <Condition10152TemplateUniposFull>Number of debit operations. Use in Alipay.</Condition10152TemplateUniposFull>
+    
+    <Condition10153TemplateUnipos>Number of credit operations</Condition10153TemplateUnipos>
+    <Condition10153TemplateUniposFull>Number of credit operations. Use in Alipay.</Condition10153TemplateUniposFull>
+    
+    <Condition10154TemplateUnipos>Amount of debit operations</Condition10154TemplateUnipos>
+    <Condition10154TemplateUniposFull>Amount of debit operations. Use in Alipay.</Condition10154TemplateUniposFull>
+    
+    <Condition10155TemplateUnipos>Amount of credit operations</Condition10155TemplateUnipos>
+    <Condition10155TemplateUniposFull>Amount of credit operations. Use in Alipay.</Condition10155TemplateUniposFull>
+    
+    <Condition10156TemplateUnipos>Total amount Debit - Credit</Condition10156TemplateUnipos>
+    <Condition10156TemplateUniposFull>Total amount Debit - Credit. Use in Alipay.</Condition10156TemplateUniposFull>	
+  </English>
+</Messages>
