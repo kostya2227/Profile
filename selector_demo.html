@@ -93,7 +93,7 @@
         
         <!-- Initial button -->
         <button class="btn btn-primary" id="btnLoadXml" onclick="document.getElementById('xmlFile').click()">1. Загрузить profile.xml</button>
-        <button class="btn" onclick="document.getElementById('md5XmlFile').click()" title="Сгенерировать MD5 хеш для XML файла">🔐 Сгенерировать md5</button>
+        <button class="btn" onclick="selectXmlForMD5()" title="Сгенерировать MD5 хеш для XML файла">🔐 Сгенерировать md5</button>
         
         <!-- Hidden by default -->
         <span id="workflowButtons" class="hidden">
@@ -743,7 +743,57 @@
         a.click();
     }
 
-    // Handle MD5 Generation
+    // Handle MD5 Generation with File System Access API
+    async function selectXmlForMD5() {
+        let fileHandle = null;
+        let file = null;
+        
+        // Try to use File System Access API (modern browsers)
+        if ('showOpenFilePicker' in window) {
+            try {
+                [fileHandle] = await window.showOpenFilePicker({
+                    types: [{
+                        description: 'XML файлы',
+                        accept: { 'application/xml': ['.xml'], 'text/xml': ['.xml'] }
+                    }],
+                    multiple: false
+                });
+                file = await fileHandle.getFile();
+            } catch (err) {
+                if (err.name === 'AbortError') {
+                    return; // User cancelled
+                }
+                // Fallback to traditional file input
+                document.getElementById('md5XmlFile').click();
+                return;
+            }
+        } else {
+            // Fallback to traditional file input
+            document.getElementById('md5XmlFile').click();
+            return;
+        }
+        
+        // Process the file
+        if (!file.name.toLowerCase().endsWith('.xml')) {
+            alert('Пожалуйста, выберите файл формата .xml');
+            return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+            try {
+                await generateMD5(e.target.result, fileHandle);
+            } catch(err) {
+                alert('Ошибка при генерации MD5: ' + err.message);
+            }
+        };
+        reader.onerror = function() {
+            alert('Ошибка чтения файла');
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    // Traditional file input handler (fallback)
     document.getElementById('md5XmlFile').addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (!file) return;
@@ -755,9 +805,9 @@
         }
         
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = async function(e) {
             try {
-                generateMD5(e.target.result);
+                await generateMD5(e.target.result, null);
             } catch(err) {
                 alert('Ошибка при генерации MD5: ' + err.message);
             }
@@ -771,7 +821,7 @@
         e.target.value = '';
     });
 
-    function generateMD5(arrayBuffer) {
+    async function generateMD5(arrayBuffer, sourceFileHandle) {
         // Convert ArrayBuffer to WordArray (big-endian 32-bit words)
         const bytes = new Uint8Array(arrayBuffer);
         const words = [];
@@ -798,7 +848,34 @@
         const hash = CryptoJS.MD5(combined);
         const md5Hex = hash.toString(CryptoJS.enc.Hex).toUpperCase();
         
-        // Create and download file
+        // Try to use File System Access API to save in the same directory
+        // Browser will remember the directory context from showOpenFilePicker
+        if (sourceFileHandle && 'showSaveFilePicker' in window) {
+            try {
+                const fileHandle = await window.showSaveFilePicker({
+                    suggestedName: 'profile.md5',
+                    types: [{
+                        description: 'MD5 файл',
+                        accept: { 'text/plain': ['.md5'] }
+                    }]
+                });
+                
+                const writable = await fileHandle.createWritable();
+                await writable.write(md5Hex);
+                await writable.close();
+                return;
+            } catch (err) {
+                // User cancelled or error occurred, fall back to download
+                if (err.name !== 'AbortError') {
+                    console.warn('File System Access API failed, using download:', err);
+                } else {
+                    // User cancelled, don't download
+                    return;
+                }
+            }
+        }
+        
+        // Fallback: Create and download file (traditional method)
         const blob = new Blob([md5Hex], {type: "text/plain"});
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
